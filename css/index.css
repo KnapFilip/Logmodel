@@ -44,6 +44,7 @@ footer
 {
 color: rgb(255, 255, 255);
 font-size: 2px;
+background-color: rgb(85, 85, 85);
 font-family: 'Arial';
 float: inline-end;
 text-align: center;
@@ -68,11 +69,10 @@ div.info
 {
 color: white;
 background-color: rgb(85, 85, 85);
-width: 85%;  
+width: 100%;  
 text-align: center;
-margin-left: 7.5%;
 height: 100%;
-margin-top: 50%;  
+margin-top: 45%;  
 }
 nav{
 
@@ -98,4 +98,8 @@ text-decoration: underline;
 }
 p a{
 color: rgb(255, 255, 255);
+}
+div.blok{
+    background-color: rgb(85, 85, 85);
+    height: 10%;
 }
