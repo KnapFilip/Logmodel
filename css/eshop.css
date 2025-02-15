@@ -105,3 +105,21 @@ h2 a:hover{
     color: white;
     text-decoration: underline;
 }
+div.bor{
+    border: 2px solid rgb(255, 255, 255);
+}
+div.buk{
+    border: 2px solid rgb(255, 255, 255);
+}
+div.dub{
+    border: 2px solid rgb(255, 255, 255);
+}
+div.javor{
+    border: 2px solid rgb(255, 255, 255);
+}
+div.smrk{
+    border: 2px solid rgb(255, 255, 255);
+}
+div.topol{
+    border: 2px solid rgb(255, 255, 255);
+}
