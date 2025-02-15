@@ -1,24 +1,19 @@
 <?php
-// Get data from form  
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $message = htmlspecialchars(trim($_POST['message']));
 
-$to = "KnapFilip@email.cz";
-$subject = "Objednávka Logmodel";
+    $to = "KnapFilip@email.cz";
+    $subject = "Objednávka-Logmodel";
+    $body = "Jméno: $name\nEmail: $email\nZpráva:\n$message";
+    $headers = "From: $email";
 
-// The following text will be sent
-// Name = user entered name
-// Email = user entered email
-// Message = user entered message 
-$txt = "Name = " . $name . "\r\n  Email = "
-    . $email . "\r\n Message =" . $message;
-
-$headers = "From: noreply@demosite.com" . "\r\n" .
-    "CC: somebodyelse@example.com";
-if ($email != NULL) {
-    mail($to, $subject, $txt, $headers);
+    if (mail($to, $subject, $body, $headers)) {
+        echo "Zpráva byla úspěšně odeslána.";
+    } else {
+        echo "Nastala chyba při odesílání zprávy.";
+    }
+} else {
+    echo "Neplatný požadavek.";
 }
-
-// Redirect to
-header("Location:contact.html");
