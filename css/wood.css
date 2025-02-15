@@ -114,7 +114,12 @@ h3 a:hover{
     color: white;
     text-decoration: underline;
 }
-button a{
-    background-color: rgb(85, 85, 85);
-    border: 2px solid white;
+table{
+text-align: center;
+}
+tr{
+    text-align: center;
+}
+th{
+    text-align: center;
 }
