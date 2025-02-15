@@ -72,6 +72,28 @@
                 <h2><a href="html/wood/topol.html">Topolové</a></h2>
             </div>
         </div>
+        <div class="order_form">
+            <h2>Objednávkový formulář</h2>
+            <form action="https://formspree.io/f/xgvonpnr" method="post">
+                <label for="info"><h3>Kontaktní údaje</h3></label>
+                <label for="name">Jméno</label><br>
+                <input type="txt" name="name" id="name" required><br>
+                <label for="email">E-mail</label><br>
+                <input type="email" name="email" id="email" required><br>
+                <input name="subject" type="hidden" value="Objednávka-Logmodel">
+                <label for="phone">Telefon</label><br>
+                <input type="tel" name="phone" id="phone" required><br>
+                <label for="order"><h3>Obednávka</h3></label>
+                <label for="product"><h3>Druh dřeva</h3></label>
+                <input type="checkbox" id="bor">Borové <br>
+                <input type="checkbox" id="buk">Bukové <br>
+                <input type="checkbox" id="dub">Dubové <br>
+                <input type="checkbox" id="javor">Javorové <br>
+                <input type="checkbox" id="smrk">Smrkové <br>
+                <input type="checkbox" id="topol">Topolové <br>
+                <label for="bor">Borové</label>
+            </form>
+        </div>
     </div>
 </body>
 <footer>
