@@ -10,7 +10,7 @@ header{
 body{
     background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 125%;
     background-position-y: 13%;
     color: black;
     text-align: center;
@@ -84,4 +84,41 @@ text-align: center;
 margin-left: 7.5%;
 height: 100%;
 margin-top: 2.5%;  
+}
+div.contact{
+display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;}
+div.contact_info{
+
+}
+div.form{
+
+}
+input{
+background-color: transparent;
+border: 3px solid black;
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+width: 100%;
+}
+textarea{
+background-color: transparent;
+border: 3px solid black;
+font-size: medium;
+font-family: Arial, Helvetica, sans-serif;
+width: 100%;
+}
+label{
+font-size: 25px;
+font-family: Arial, Helvetica, sans-serif;
+}
+input[type=submit]{
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 15px;
+    width: 30%;
+    cursor: pointer;
 }

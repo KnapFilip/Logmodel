@@ -93,9 +93,9 @@ div.products{
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(6, 2fr);
-    grid-template-rows: repeat(2, 2fr);
+    grid-template-rows: repeat(3, 2fr);
 }
-div.pul{
+div.wood{
     border: 2px solid rgb(255, 255, 255);
 }
 h2 a{
