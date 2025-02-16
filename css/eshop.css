@@ -69,7 +69,7 @@ li a:hover{
 text-decoration: underline;
 }
 .active{
-
+text-decoration: underline;
 }
 p a{
 color: rgb(255, 255, 255);
