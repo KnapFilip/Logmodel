@@ -85,3 +85,8 @@ margin-left: 7.5%;
 height: 100%;
 margin-top: 2.5%;  
 }
+html{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;   
+}

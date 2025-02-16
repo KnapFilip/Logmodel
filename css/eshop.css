@@ -79,9 +79,9 @@ div.info
 color: white;
 background-color: rgb(85, 85, 85);
 border: 5px solid rgb(85, 85, 85);
-width: 85%;  
+width: 95%;  
 text-align: center;
-margin-left: 7.5%;
+margin-left: 3%;
 height: 100%;
 }
 div.products{
@@ -122,4 +122,74 @@ div.smrk{
 }
 div.topol{
     border: 2px solid rgb(255, 255, 255);
+}
+.hidden{
+    display: none;
+}
+html{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;   
+}
+div.product_form{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(6, 0.5fr);
+    grid-template-rows: repeat(1, 0.5fr);
+    text-align: center;
+}
+input{
+background-color: transparent;
+color: white;
+border: 2px solid black;
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+label{
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+label a{
+    color: white;
+    text-decoration: underline;
+}
+input[type="checkbox"]:checked + label::after {
+    content: "✔";
+    position: absolute;
+    top: 2px;
+    left: 7px;
+    font-size: 20px;
+    color: white;
+}
+h4 {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+input[type="checkbox"]:checked {
+    background-color: #4CAF50; /* Zelené pozadí pro zaškrtnutý */
+    border-color: #4CAF50; /* Zelená barva okraje */
+}
+
+input[type="checkbox"]:not(:checked) {
+    background-color: #f44336; /* Červené pozadí pro nezaškrtnutý */
+    border-color: #f44336; /* Červená barva okraje */
+}
+input[type="submit"]{
+    background-color: transparent;
+    color: white;
+    border: 2px solid black;
+    font-size: 20px;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    cursor: pointer;
 }

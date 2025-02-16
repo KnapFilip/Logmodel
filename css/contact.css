@@ -119,6 +119,11 @@ input[type=submit]{
     background-color: transparent;
     border: 3px solid black;
     border-radius: 15px;
-    width: 30%;
+    width: 35%;
     cursor: pointer;
+}
+html{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;   
 }

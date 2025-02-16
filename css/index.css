@@ -7,6 +7,11 @@ header{
     border-radius: 15px;
     padding: 5px;
 }
+html{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;   
+}
 body{
     background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
     background-repeat: no-repeat;
@@ -14,6 +19,7 @@ body{
     background-position-y: 13%;
     color: black;
     text-align: center;
+    overflow-x: hidden;
 }
 h1{ 
     color: rgb(255, 255, 255);

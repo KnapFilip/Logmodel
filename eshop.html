@@ -77,44 +77,672 @@
             <form action="https://formspree.io/f/xgvonpnr" method="post">
                 <label for="info"><h3>Kontaktní údaje</h3></label>
                 <label for="name">Jméno</label><br>
-                <input type="txt" name="name" id="name" required><br>
+                <input type="text" name="name" id="name" required><br>
                 <label for="email">E-mail</label><br>
                 <input type="email" name="email" id="email" required><br>
                 <input name="subject" type="hidden" value="Objednávka-Logmodel">
                 <label for="phone">Telefon</label><br>
                 <input type="tel" name="phone" id="phone" required><br>
-                <label for="order"><h3>Obednávka</h3></label>
+                
+                
+                <label for="order"><h3>Objednávka</h3></label>
                 <label for="product"><h3>Druh dřeva</h3></label>
-                <input type="checkbox" id="bor">Borové dřevo<br>
-                    <div hidden id="bor-inputs">
-                        <label for="bor-inputs"><h3>Borové dřevo</h3></label>
+                <div class="product_form">
+                    <div class="smrk_form">
+                        <input type="checkbox" id="smrk" onclick="toggleInputs('smrk', 'smrk-inputs')"><label for="">Smrkové dřevo</label><br>
+                        <div id="smrk-inputs" class="hidden">
+                            <h4>Jakost A</h4><br>
+                            <label for="0101A">Smrkové dřevo 0,5m (0101A)</label><br>
+                            <label>Cena za kus: 170 Kč</label><br>
+                            <input type="number" name="0101A" id="0101A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0102A">Smrkové dřevo 0,5m štípané (0102A)</label><br>
+                            <label>Cena za kus: 220 Kč</label><br>
+                            <input type="number" name="0102A" id="0102A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0103A">Smrkové dřevo 1m (0103A)</label><br>
+                            <label>Cena za kus: 160 Kč</label><br>
+                            <input type="number" name="0103A" id="0103A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0104A">Smrkové dřevo 1m štípané (0104A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0104A" id="0104A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0105A">Smrkové dřevo 1,5m (0105A)</label><br>
+                            <label>Cena za kus: 220 Kč</label><br>
+                            <input type="number" name="0105A" id="0105A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0106A">Smrkové dřevo 1,5m štípané (0106A)</label><br>
+                            <label>Cena za kus: 270 Kč</label><br>
+                            <input type="number" name="0106A" id="0106A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0107A">Smrkové dřevo 2m (0107A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0107A" id="0107A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0108A">Smrkové dřevo 2,0m (0108A)</label><br>
+                            <label>Cena za kus: 260 Kč</label><br>
+                            <input type="number" name="0108A" id="0108A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0109A">Smrkové dřevo 2,5m (0109A)</label><br>
+                            <label>Cena za kus: 370 Kč</label><br>
+                            <input type="number" name="0109A" id="0109A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0110A">Smrkové dřevo 2,5m štípané (0110A)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0110A" id="0110A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0111A">Smrkové dřevo 4m (0111A)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0111A" id="0111A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0112A">Smrkové dřevo 4,0m (0112A)</label><br>
+                            <label>Cena za kus: 500 Kč</label><br>
+                            <input type="number" name="0112A" id="0112A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0113A">Smrkové dřevo 6m (0113A)</label><br>
+                            <label>Cena za kus: 310 Kč</label><br>
+                            <input type="number" name="0113A" id="0113A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0114A">Smrkové dřevo 12m  (0114A)</label><br>
+                            <label>Cena za kus: - Kč</label><br>
+                            <input type="number" name="0114A" id="0114A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <h4>Jakost B</h4><br>
+                            <label for="0101B">Smrkové dřevo 0,5m (0101B)</label><br>
+                            <label>Cena za kus: 160 Kč</label><br>
+                            <input type="number" name="0101B" id="0101B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0102B">Smrkové dřevo 0,5m štípané (0102B)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0102B" id="0102B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0103B">Smrkové dřevo 1m (0103B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0103B" id="0103B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0104B">Smrkové dřevo 1m štípané (0104B)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0104B" id="0104B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0105B">Smrkové dřevo 1,5m (0105B)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0105B" id="0105B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0106B">Smrkové dřevo 1,5m štípané (0106B)</label><br>
+                            <label>Cena za kus: 260 Kč</label><br>
+                            <input type="number" name="0106B" id="0106B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0107B">Smrkové dřevo 2m (0107B)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0107B" id="0107B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0108B">Smrkové dřevo 2,0m (0108B)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0108B" id="0108B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0109B">Smrkové dřevo 2,5m (0109B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0109B" id="0109B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0110B">Smrkové dřevo 2,5m štípané (0110B)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0110B" id="0110B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0111B">Smrkové dřevo 4m (0111B)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0111B" id="0111B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0112B">Smrkové dřevo 4,0m (0112B)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0112B" id="0112B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+
+                            <label for="0113B">Smrkové dřevo 6m (0113B)</label><br>
+                            <label>Cena za kus: 300 Kč</label><br>
+                            <input type="number" name="0113B" id="0113B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <label for="0114B">Smrkové dřevo 12m  (0114B)</label><br>
+                            <label>Cena za kus: - Kč</label><br>
+                            <input type="number" name="0114B" id="0114B" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
+                            
+                            <br><label for="subtotal">Mezisoučet (Kč):</label><br>
+                            <input type="text" id="subtotal_smrk"  value="0"><br>
                     </div>
-                <input type="checkbox" id="buk">Bukové dřevo<br>
-                    <div hidden id="buk-inputs">
-                        <label for="buk-inputs"><h3>Bukové dřevo</h3></label>
                     </div>
-                <input type="checkbox" id="dub">Dubové dřevo<br>
-                    <div hidden id="dub-inputs">
-                        <label for="dub-inputs"><h3>Dubové dřevo</h3></label>
+                    <div class="bor_form">
+                        <input type="checkbox" id="bor" onclick="toggleInputs('bor', 'bor-inputs')"><label for="">Borové dřevo</label><br>
+                        <div id="bor-inputs" class="hidden">
+                            <h4>Jakost A</h4><br>
+                            <label for="0201A">Borové dřevo 0,5m (0201A)</label><br>
+                            <label>Cena za kus: 160 Kč</label><br>
+                            <input type="number" name="0201A" id="0201A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0202A">Borové dřevo 0,5m štípané (0202A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0202A" id="0202A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0203A">Borové dřevo 1m (0203A)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0203A" id="0203A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0204A">Borové dřevo 1m štípané (0204A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0204A" id="0204A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0205A">Borové dřevo 1,5m (0205A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0205A" id="0205A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0206A">Borové dřevo 1,5m štípané (0206A)</label><br>
+                            <label>Cena za kus: 260 Kč</label><br>
+                            <input type="number" name="0206A" id="0206A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0207A">Borové dřevo 2m (0207A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0207A" id="0207A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0208A">Borové dřevo 2,5m (0208A)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0208A" id="0208A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0209A">Borové dřevo 2,5m štípané (0209A)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0209A" id="0209A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0210A">Borové dřevo 4m (0210A)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0210A" id="0210A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0211A">Borové dřevo 6m (0211A)</label><br>
+                            <label>Cena za kus: 300 Kč</label><br>
+                            <input type="number" name="0211A" id="0211A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0212A">Borové dřevo 12m  (0212A)</label><br>
+                            <label>Cena za kus: - Kč</label><br>
+                            <input type="number" name="0212A" id="0212A" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <h4>Jakost B</h4><br>
+                            <label for="0201B">Borové dřevo 0,5m (0201B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0201B" id="0201B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0202B">Borové dřevo 0,5m štípané (0202B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0202B" id="0202B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0203B">Borové dřevo 1m (0203B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0203B" id="0203B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0204B">Borové dřevo 1m štípané (0204B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0204B" id="0204B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0205B">Borové dřevo 1,5m (0205A)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0205B" id="0205B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0206B">Borové dřevo 1,5m štípané (0206B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0206B" id="0206B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0207B">Borové dřevo 2m (0207B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0207B" id="0207B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0208B">Borové dřevo 2,5m štípané (0208B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0208B" id="0208B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0209B">Borové dřevo 2,5m (0209B)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0209B" id="0209B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0210B">Borové dřevo 4m (0210B)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0210B" id="0210B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+
+                            <label for="0211B">Borové dřevo 6m (0211B)</label><br>
+                            <label>Cena za kus: 300 Kč</label><br>
+                            <input type="number" name="0211B" id="0211B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <label for="0212B">Borové dřevo 12m  (0212B)</label><br>
+                            <label>Cena za kus: - Kč</label><br>
+                            <input type="number" name="0212B" id="0212B" min="0" value="0" oninput="calculateSubtotalBor()"><br>
+                            
+                            <br><label for="subtotal">Mezisoučet (Kč):</label><br>
+                            <input type="text" id="subtotal_bor" value="0" readonly><br>
+                        </div>
                     </div>
-                <input type="checkbox" id="javor">Javorové dřevo<br>
-                    <div hidden id="javor-inputs">
-                        <label for="javor-inputs"><h3>Javorové dřevo</h3></label>
+                    <div class="buk_form">
+                        <input type="checkbox" id="buk" onclick="toggleInputs('buk', 'buk-inputs')"><label for="">Bukové dřevo</label><br>
+                        <div id="buk-inputs" class="hidden">
+                            <h4>Jakost A</h4><br>
+                            <label for="0301A">Bukové dřevo 0,5m (0301A)</label><br>
+                            <label>Cena za kus: 160 Kč</label><br>
+                            <input type="number" name="0301A" id="0301A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0302A">Bukové dřevo 0,5m štípané (0302A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0302A" id="0302A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0303A">Bukové dřevo 1m (0303A)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0303A" id="0303A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0304A">Bukové dřevo 1m štípané (0304A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0304A" id="0304A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0305A">Bukové dřevo 1,5m (0305A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0305A" id="0305A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0306A">Bukové dřevo 1,5m štípané (0306A)</label><br>
+                            <label>Cena za kus: 260 Kč</label><br>
+                            <input type="number" name="0306A" id="0306A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0307A">Bukové dřevo 2m (0307A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0307A" id="0307A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0308A">Bukové dřevo 2m štípané (0308A)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0308A" id="0308A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0309A">Bukové dřevo 2,5m (0309A)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0309A" id="0309A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0310A">Bukové dřevo 3m (0310A)</label><br>
+                            <label>Cena za kus: 350 Kč</label><br>
+                            <input type="number" name="0310A" id="0310A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0311A">Bukové dřevo 4m (0311A)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0311A" id="0311A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0312A">Bukové dřevo 6m (0312A)</label><br>
+                            <label>Cena za kus: 300 Kč</label><br>
+                            <input type="number" name="0312A" id="0312A" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <h4>Jakost B</h4><br>
+                            <label for="0301B">Bukové dřevo 0,5m (0301B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0301B" id="0301B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0302B">Bukové dřevo 0,5m štípané (0202B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0302B" id="0302B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0303B">Bukové dřevo 1m (0303B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0303B" id="0303B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0304B">Bukové dřevo 1m štípané (0304B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0304B" id="0304B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0305B">Bukové dřevo 1,5m (0305B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0305B" id="0305B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0306B">Bukové dřevo 1,5m štípané (0306B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0306B" id="0306B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0307B">Bukové dřevo 2m (0307B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0307B" id="0307B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0308B">Bukové dřevo 2m štípané (0308B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0308B" id="0308B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0309B">Bukové dřevo 2,5m (0309B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0309B" id="0309B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0310B">Bukové dřevo 3m (0310B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0310B" id="0310B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <label for="0311B">Bukové dřevo 4m (0311B)</label><br>
+                            <label>Cena za kus: 240 Kč</label><br>
+                            <input type="number" name="0311B" id="0311B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+
+                            <label for="0312B">Bukové dřevo 6m (0312B)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0312B" id="0312B" min="0" value="0" oninput="calculateSubtotalBuk()"><br>
+                            
+                            <br><label for="subtotal">Mezisoučet (Kč):</label><br>
+                            <input type="text" id="subtotal_buk" value="0" readonly><br>
+                        </div>
                     </div>
-                <input type="checkbox" id="smrk">Smrkové dřevo<br>
-                    <div hidden id="smrk-inputs">
-                        <label for="smrk-inputs"><h3>Smrkové dřevo</h3></label>
+                    <div class="dub_form">
+                        <input type="checkbox" id="dub" onclick="toggleInputs('dub', 'dub-inputs')"><label for="">Dubové dřevo</label><br>
+                        <div id="dub-inputs" class="hidden">
+                            <h4>Jakost A</h4><br>
+                            <label for="0401A">Dubové dřevo 0,5m (0401A)</label><br>
+                            <label>Cena za kus: 160 Kč</label><br>
+                            <input type="number" name="0401A" id="0401A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0402A">Dubové dřevo 0,5m štípané (0402A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0402A" id="0402A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0403A">Dubové dřevo 1m (0403A)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0403A" id="0403A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0404A">Dubové dřevo 1m štípané (0404A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0404A" id="0404A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0405A">Dubové dřevo 1,5m (0405A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0405A" id="0405A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0406A">Dubové dřevo 1,5m štípané (0406A)</label><br>
+                            <label>Cena za kus: 260 Kč</label><br>
+                            <input type="number" name="0406A" id="0406A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0407A">Dubové dřevo 2m (0407A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0407A" id="0407A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0408A">Dubové dřevo 2m štípané (0408A)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0408A" id="0408A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0409A">Dubové dřevo 2,5m (0409A)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0409A" id="0409A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0410A">Dubové dřevo 3m (0410A)</label><br>
+                            <label>Cena za kus: 350 Kč</label><br>
+                            <input type="number" name="0410A" id="0410A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0411A">Dubové dřevo 4m (0411A)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0411A" id="0411A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0412A">Dubové dřevo 6m (0412A)</label><br>
+                            <label>Cena za kus: 300 Kč</label><br>
+                            <input type="number" name="0412A" id="0412A" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <h4>Jakost B</h4><br>
+                            <label for="0401B">Dubové dřevo 0,5m (0401B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0401B" id="0401B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0402B">Dubové dřevo 0,5m štípané (0402B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0402B" id="0402B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0403B">Dubové dřevo 1m (0403B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0403B" id="0403B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0404B">Dubové dřevo 1m štípané (0404B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0404B" id="0404B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0405B">Dubové dřevo 1,5m (0405B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0405B" id="0405B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0406B">Dubové dřevo 1,5m štípané (0406B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0406B" id="0406B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0407B">Dubové dřevo 2m (0407B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0407B" id="0407B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0408B">Dubové dřevo 2m štípané (0408B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0408B" id="0408B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0409B">Dubové dřevo 2,5m (0409B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0409B" id="0409B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0410B">Dubové dřevo 3m (0410B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0410B" id="0410B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <label for="0411B">Dubové dřevo 4m (0411B)</label><br>
+                            <label>Cena za kus: 240 Kč</label><br>
+                            <input type="number" name="0411B" id="0411B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+
+                            <label for="0412B">Dubové dřevo 6m (0412B)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0412B" id="0412B" min="0" value="0" oninput="calculateSubtotalDub()"><br>
+                            
+                            <br><label for="subtotal">Mezisoučet (Kč):</label><br>
+                            <input type="text" id="subtotal_dub" value="0"><br>
+                        </div>
                     </div>
-                <input type="checkbox" id="topol">Topolové dřevo<br>
-                    <div hidden id="topol-inputs">
-                        <label for="topol-inputs"><h3>Topolové dřevo</h3></label>
+                    <div class="topol_form">
+                        <input type="checkbox" id="topol" onclick="toggleInputs('topol', 'topol-inputs')"><label for="">Topolové dřevo</label><br>
+                        <div id="topol-inputs" class="hidden">
+                            <h4>Jakost A</h4><br>
+                            <label for="0501A">Topolové dřevo 0,5m (0501A)</label><br>
+                            <label>Cena za kus: 160 Kč</label><br>
+                            <input type="number" name="0501A" id="0501A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0502A">Topolové dřevo 0,5m štípané (0502A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0502A" id="0502A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0503A">Topolové dřevo 1m (0503A)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0503A" id="0503A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0504A">Topolové dřevo 1m štípané (0504A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0504A" id="0504A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0505A">Topolové dřevo 1,5m (0505A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0505A" id="0505A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0506A">Topolové dřevo 1,5m štípané (0506A)</label><br>
+                            <label>Cena za kus: 260 Kč</label><br>
+                            <input type="number" name="0506A" id="0506A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0507A">Topolové dřevo 2m (0507A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0507A" id="0507A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0508A">Topolové dřevo 2m štípané (0508A)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0508A" id="0508A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0509A">Topolové dřevo 2,5m (0509A)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0509A" id="0509A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0510A">Topolové dřevo 3m (0510A)</label><br>
+                            <label>Cena za kus: 350 Kč</label><br>
+                            <input type="number" name="0510A" id="0510A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0511A">Topolové dřevo 4m (0511A)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0511A" id="0511A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0512A">Topolové dřevo 6m (0512A)</label><br>
+                            <label>Cena za kus: 300 Kč</label><br>
+                            <input type="number" name="0512A" id="0512A" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <h4>Jakost B</h4><br>
+                            <label for="0501B">Topolové dřevo 0,5m (0501B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0501B" id="0501B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0502B">Topolové dřevo 0,5m štípané (0502B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0502B" id="0502B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0503B">Topolové dřevo 1m (0503B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0503B" id="0503B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0504B">Topolové dřevo 1m štípané (0504B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0504B" id="0504B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0505B">Topolové dřevo 1,5m (0505B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0505B" id="0505B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0506B">Topolové dřevo 1,5m štípané (0506B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0506B" id="0506B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0507B">Topolové dřevo 2m (0507B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0507B" id="0507B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0508B">Topolové dřevo 2m štípané (0508B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0508B" id="0508B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0509B">Topolové dřevo 2,5m (0509B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0509B" id="0509B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0510B">Topolové dřevo 3m (0510B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0510B" id="0510B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <label for="0511B">Topolové dřevo 4m (0511B)</label><br>
+                            <label>Cena za kus: 240 Kč</label><br>
+                            <input type="number" name="0511B" id="0511B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+
+                            <label for="0512B">Topolové dřevo 6m (0512B)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0512B" id="0512B" min="0" value="0" oninput="calculateSubtotalTopol()"><br>
+                            
+                            <br><label for="subtotal">Mezisoučet (Kč):</label><br>
+                            <input type="text" id="subtotal_topol" value="0" readonly><br>
+                        </div>
                     </div>
-                <input type="checkbox">
+                    <div class="javor_form">
+                        <input type="checkbox" id="javor" onclick="toggleInputs('javor', 'javor-inputs')"><label for="">Javorové dřevo</label><br>
+                        <div id="javor-inputs" class="hidden">
+                            <h4>Jakost A</h4><br>
+                            <label for="0601A">Javorové dřevo 0,5m (0601A)</label><br>
+                            <label>Cena za kus: 160 Kč</label><br>
+                            <input type="number" name="0601A" id="0601A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0602A">Javorové dřevo 0,5m štípané (0602A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0602A" id="0602A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0603A">Javorové dřevo 1m (0603A)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0603A" id="0603A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0604A">Javorové dřevo 1m štípané (0604A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0604A" id="0604A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0605A">Javorové dřevo 1,5m (0605A)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0605A" id="0605A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0606A">Javorové dřevo 1,5m štípané (0606A)</label><br>
+                            <label>Cena za kus: 260 Kč</label><br>
+                            <input type="number" name="0606A" id="0606A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0607A">Javorové dřevo 2m (0607A)</label><br>
+                            <label>Cena za kus: 200 Kč</label><br>
+                            <input type="number" name="0607A" id="0607A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0608A">Javorové dřevo 2m štípané (0608A)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0608A" id="0608A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0609A">Javorové dřevo 2,5m (0609A)</label><br>
+                            <label>Cena za kus: 360 Kč</label><br>
+                            <input type="number" name="0609A" id="0609A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0610A">Javorové dřevo 3m (0610A)</label><br>
+                            <label>Cena za kus: 350 Kč</label><br>
+                            <input type="number" name="0610A" id="0610A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0611A">Javorové dřevo 4m (0611A)</label><br>
+                            <label>Cena za kus: 340 Kč</label><br>
+                            <input type="number" name="0611A" id="0611A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0612A">Javorové dřevo 6m (0612A)</label><br>
+                            <label>Cena za kus: 300 Kč</label><br>
+                            <input type="number" name="0612A" id="0612A" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <h4>Jakost B</h4><br>
+                            <label for="0601B">Javorové dřevo 0,5m (0601B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0601B" id="0601B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0602B">Javorové dřevo 0,5m štípané (0602B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0602B" id="0602B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0603B">Javorové dřevo 1m (0603B)</label><br>
+                            <label>Cena za kus: 110 Kč</label><br>
+                            <input type="number" name="0603B" id="0603B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0604B">Javorové dřevo 1m štípané (0604B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0604B" id="0604B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0605B">Javorové dřevo 1,5m (0605B)</label><br>
+                            <label>Cena za kus: 150 Kč</label><br>
+                            <input type="number" name="0605B" id="0605B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0606B">Javorové dřevo 1,5m štípané (0606B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0606B" id="0606B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0607B">Javorové dřevo 2m (0607B)</label><br>
+                            <label>Cena za kus: 140 Kč</label><br>
+                            <input type="number" name="0607B" id="0607B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0608B">Javorové dřevo 2m štípané (0608B)</label><br>
+                            <label>Cena za kus: 180 Kč</label><br>
+                            <input type="number" name="0608B" id="0608B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0609B">Javorové dřevo 2,5m (0609B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0609B" id="0609B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0610B">Javorové dřevo 3m (0610B)</label><br>
+                            <label>Cena za kus: 250 Kč</label><br>
+                            <input type="number" name="0610B" id="0610B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <label for="0611B">Javorové dřevo 4m (0611B)</label><br>
+                            <label>Cena za kus: 240 Kč</label><br>
+                            <input type="number" name="0611B" id="0611B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+
+                            <label for="0612B">Javorové dřevo 6m (0612B)</label><br>
+                            <label>Cena za kus: 210 Kč</label><br>
+                            <input type="number" name="0612B" id="0612B" min="0" value="0" oninput="calculateSubtotalJavor()"><br>
+                            
+                            <br><label for="subtotal">Mezisoučet (Kč):</label><br>
+                            <input type="text" id="subtotal_javor" value="0" readonly><br>
+                        </div>
+                    </div>
+                </div><br><br>
+                <label for="total">Celková Cena</label><br>
+                <input type="text" id="total" value="0" readonly><br><br>
+                <input type="checkbox" required>
                 <label for="vos"><a href="vos">Souhlasím s všeobecnými obchodními podmínkami</a></label> <br>
-                <input type="checkbox">
-                <label for="gdpr"><a href="gdpr">Souhlasím se zpracováním osobních údajů</a></label> <br>
-                <input type="submit" value="Odeslat">   
-            </form>
+                <input type="checkbox" required>
+                <label for="gdpr"><a href="gdpr">Souhlasím se zpracováním osobních údajů</a></label> <br><br>
+                <input type="submit" value="Odeslat">
+            </form>                       
         </div>
     </div>
 </body>
@@ -122,4 +750,7 @@
     <p>Created by Filip Knap & Alex Kačura with lot of ☕ and ❤️</p>
     <p>© 2025 Knap Filip</p>
 </footer>
+<script src="Javascript/checkbox.js"></script>
+<script src="Javascript/calculateSubtotal.js"></script>
+<script src="Javascript/calculateTotal.js"></script>
 </html>
