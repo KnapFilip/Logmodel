@@ -145,6 +145,7 @@ border: 2px solid black;
 font-size: 20px;
 font-family: Arial, Helvetica, sans-serif;
 text-align: center;
+border-radius: 15px;
 }
 label{
     background-color: transparent;
@@ -188,7 +189,6 @@ input[type="submit"]{
     color: white;
     border: 2px solid black;
     font-size: 20px;
-    border-radius: 15px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     cursor: pointer;
