@@ -24,6 +24,7 @@
                 <ul>
                     <li><a href="index.html">Úvod</a></li>
                     <li><a href="about.html">O nás</a></li>
+                    <li><a href="catalog.html">Katalog</a></li>
                     <li class="active"><a href="eshop.html">Eshop</a></li>
                     <li><a href="contact.html">Kontakt</a></li>
                 </ul>
@@ -33,7 +34,7 @@
             <p>- Klády jsou určeny pro modeláře v měřítku H0. Balení je ve volném provedení (klády balím jako volně ložené), takže je možno s nimi dělat cokoliv a jakkoliv je
                 rovnat jak do vozů, tak i volně do lesa jako imitaci určeného dřeva na odvoz, či na nakládací plochy a jiná místa, kde se pracuje se dřevem.
             </p>
-            <p>- K výrobě využívám přírodní dřevo. Název dřeviny v mém katalogu je pouze "obchodní" název pro jednodušší orientaci, tudíž s reálnou dřevinou nemusí mít
+            <p>- K výrobě využívám přírodní dřevo. Název dřeviny v mém katalogu je pouze "obchodní" název pro jednodušší orientaci, tudíž s reálným druhem dřeviny nemusí mít
                 nic společného
             </p>
             <p>- Jakostní třída A je nejvyšší třída jakosti. Jakostní třída B je v pořadí 2. třída jakosti a oproti jakostní třídě A se liší pouze v trochu horším zbarvení dřeviny, dále
@@ -49,29 +50,8 @@
             <p>- Množství 160 cm3 odpovídá přibližně množství dvou plně ložených vozů Eas od firmy Piko. </p>
             <p>- Množství 90 cm3 odpovídá přibližně množství dvou plně ložených vozů Es od firmy Roco. </p>
             <p>- Množství 70 cm3 odpovídá přibližně množství dvou ložených vozů Es od firmy Roco.</p>
-            <p>- Pokud by však někdo chtěl množství nebo vlastní délku dřeviny podle svých potřeb, tak mě neváhejte kontaktovat. Objednávky zasílejte na E-mail, v <a href="contact.html">Kontaktech</a></p>
+            <p>- Pokud by však někdo chtěl množství nebo vlastní délku dřeviny podle svých potřeb, tak mě neváhejte kontaktovat na E-mail, v <a href="contact.html">Kontaktech</a></p>
         </div><br>
-        <h3>Zde si stačí vybrat druh dřeva</h3>
-        <div class="products">
-            <div class="bor">
-                <h2><a href="html/wood/bor/bor.html">Borové</a></h2>
-            </div>
-            <div class="buk">
-                <h2><a href="html/wood/buk/buk.html">Bukové</a></h2>
-            </div>
-            <div class="dub">
-                <h2><a href="html/wood/dub/dub.html">Dubové</a></h2>
-            </div>
-            <div class="javor">
-                <h2><a href="html/wood/javor/javor.html">Javorové</a></h2>
-            </div>
-            <div class="smrk">
-                <h2><a href="html/wood/smrk/smrk.html">Smrkové</a></h2>
-            </div>
-            <div class="topol">
-                <h2><a href="html/wood/topol/topol.html">Topolové</a></h2>
-            </div>
-        </div>
         <div class="order_form">
             <h2>Objednávkový formulář</h2>
             <form action="https://formspree.io/f/xgvonpnr" method="post">
@@ -95,7 +75,7 @@
                             <label for="0101A"><a href="html/wood/smrk/0,5.html" target="_blank">Smrkové dřevo 0,5m (0101A)</a></label><br>
                             <label>Cena za kus: 170 Kč</label><br>
                             <input type="number" name="0101A" id="0101A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
-                            
+                            <br>
                             <label for="0102A">Smrkové dřevo 0,5m štípané (0102A)</label><br>
                             <label>Cena za kus: 220 Kč</label><br>
                             <input type="number" name="0102A" id="0102A" min="0" value="0" oninput="calculateSubtotalSmrk()"><br>
@@ -735,10 +715,13 @@
                         </div>
                     </div>
                 </div><br><br>
+                <select name="dop" id="dop" oninput="calculateSubtotalDop()">
+                    <option value="osb">Osobní odběr 0Kč (Domluva přes email)</option>
+                    <option value="zas">Zásilkovna 85Kč(Z-Box)</option>
+                    <option value="cp">Osobní odběr 100Kč (domů)</option>
+                </select><br><br>
                 <label for="total">Celková Cena</label><br>
                 <input type="text" id="total" value="0" readonly><br><br>
-                <input type="checkbox" required>
-                <label for="vos"><a href="vos">Souhlasím s všeobecnými obchodními podmínkami</a></label> <br>
                 <input type="checkbox" required>
                 <label for="gdpr"><a href="Other/GDPR.pdf" target="_blank">Souhlasím se zpracováním osobních údajů</a></label> <br><br>
                 <input type="submit" value="Odeslat">
@@ -754,3 +737,12 @@
 <script src="Javascript/calculateSubtotal.js"></script>
 <script src="Javascript/calculateTotal.js"></script>
 </html>
+
+<!-- Poznámky 
+- Mezery mezi produkty Line 98
+- Rodělení Jakosti A/B (checkbox)
+- Přidat dopravu do formuláře (osobní vyzvednutí, Česká pošta, Zásilkovna) + připočítání ceny
+- Rozdělit Katalog a Eshop (2 různé stránky)
+- Udělat pozadí na celou stránku, šedé (Eshop příklad)
+
+-->

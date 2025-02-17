@@ -248,3 +248,23 @@ function calculateSubtotalJavor() {
     // Zobrazení mezisoučtu
     document.getElementById("subtotal_javor").value = subtotal.toFixed(1) + " Kč";
 }
+function calculateSubtotalDop() {
+    // Ceník
+    const prices = {
+        "osb": 0,
+        "zas": 85,
+        "cp": 100,
+    };
+
+    // Celkový součet
+    let subtotal = 0;
+
+    // Projdeme všechny položky
+    for (let id in prices) {
+        const quantity = document.getElementById(id).value;
+        subtotal += Number(quantity) * prices[id];
+    }
+
+    // Zobrazení mezisoučtu
+    document.getElementById("subtotal_dop").value = subtotal.toFixed(1) + " Kč";
+}
