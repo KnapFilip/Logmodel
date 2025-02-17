@@ -11,15 +11,25 @@ html{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;   
+    margin: 0px;
+    padding: 0px;
 }
 body{
-    background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-y: 13%;
     color: black;
     text-align: center;
     overflow-x: hidden;
+    background-color: rgb(85, 85, 85);
+    margin: 0px;
+    padding: 0px;
+}
+div.foto{
+    width: 100vw;
+
+}
+img.foto{
+    width: 100%;
+    height: 95%;
+    margin-top: -10%;
 }
 .active{
     text-decoration: underline;
@@ -66,7 +76,6 @@ width: 85%;
 text-align: center;
 margin-left: 7.5%;
 height: 100%;
-margin-top: 30%;
 }
 h2.header
 {
@@ -81,7 +90,7 @@ background-color: rgb(85, 85, 85);
 width: 100%;  
 text-align: center;
 height: 100%;
-margin-top: 45%;  
+margin-top: 0%;  
 }
 nav{
 
