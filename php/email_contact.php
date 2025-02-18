@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = "Logmodel-Kontakt";
     $headers  = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $headers .= "From: Logmodel <no-reply@helkor.eu>\r\n";
+    $headers .= "From: Logmodel <dombla@email.cz>\r\n";
     $headers .= "Reply-To: $userEmail\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
@@ -28,10 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Odeslání na email zadaný uživatelem
     $sendToUser = mail($userEmail, $subject, $body, $headers);
 
-    // Kontrola výsledků a zobrazení zprávy
+    // Přesměrování zpět na contact.html s parametrem v URL
     if ($sendToFixed && $sendToUser) {
-        echo "<script>alert('Email byl úspěšně odeslán.');</script>";
+        header("Location: http://cz1.helkor.eu:41034/contact.html?status=success");
     } else {
-        echo "<script>alert('Chyba při odesílání emailu. Zkuste to prosím znovu.');</script>";
+        header("Location: http://cz1.helkor.eu:41034/contact.html?status=error");
     }
+    exit();
 }
