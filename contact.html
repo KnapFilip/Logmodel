@@ -46,15 +46,6 @@
                     <textarea id="message" name="message" required></textarea><br><br>
                     <input type="submit" value="Odeslat">
                 </form>
-                <script>
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const status = urlParams.get('status');
-                    if (status === 'success') {
-                        alert('Email byl úspěšně odeslán.');
-                    } else if (status === 'error') {
-                        alert('Chyba při odesílání emailu. Zkuste to prosím znovu.');
-                    }
-                </script>
             </div>
         </div>
     </div>
