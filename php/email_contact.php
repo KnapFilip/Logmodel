@@ -8,9 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Nastavení základních informací
     $to = "KnapFilip@email.cz";
     $subject = "Logmodel-Kontakt";
-    $headers = "From: dombla@email.cz\r\n";
-    $headers .= "Reply-To: $userEmail\r\n";
+    $headers  = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "From: Logmodel <no-reply@helkor.eu>\r\n";
+    $headers .= "Reply-To: $userEmail\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
 
     // Obsah emailu
     $body = "Zpráva od: $name\n\n";
@@ -21,16 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "Vytvořil Knap Filip";
 
     // Odeslání na pevně daný email
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Email úspěšně odeslán na $to.";
-    } else {
-        echo "Chyba při odesílání emailu na $to.";
-    }
+    $sendToFixed = mail($to, $subject, $body, $headers);
 
     // Odeslání na email zadaný uživatelem
-    if (mail($userEmail, $subject, $body, $headers)) {
-        echo " Email úspěšně odeslán na $userEmail.";
+    $sendToUser = mail($userEmail, $subject, $body, $headers);
+
+    // Kontrola výsledků a zobrazení zprávy
+    if ($sendToFixed && $sendToUser) {
+        echo "<script>alert('Email byl úspěšně odeslán.');</script>";
     } else {
-        echo " Chyba při odesílání emailu na $userEmail.";
+        echo "<script>alert('Chyba při odesílání emailu. Zkuste to prosím znovu.');</script>";
     }
 }
