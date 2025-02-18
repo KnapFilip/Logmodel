@@ -1,0 +1,7 @@
+- Mezery mezi produkty (př: Line 98)
+- Rodělení Jakosti A/B (checkbox)
+- Přidat dopravu do formuláře (osobní vyzvednutí, Česká pošta, Zásilkovna) + připočítání ceny
+- Rozdělit Katalog a Eshop (2 různé stránky)
+- Udělat pozadí na celou stránku, šedé (Eshop příklad)
+- Možnost aby Blažek mohl nastavovat ceny + počet skladem sám (Jiné html)
+- Nastavit všechny stránky aby bylo možné používat to i na mobilu
