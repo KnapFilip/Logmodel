@@ -1,206 +1,163 @@
-header{
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 10px;
-    font-family: 'Arial';
-    background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: fixed;
-    background-position-y: 50%;
+/* 🔹 Definování hlavních proměnných */
+:root {
+    --bg-main: rgb(85, 85, 85);
+    --text-color: white;
+    --border-color: white;
+    --font-main: Arial, Helvetica, sans-serif;
 }
-body{
-    background-color: rgb(85, 85, 85);
+
+/* 🔹 Obecné styly */
+body {
+    background-color: var(--bg-main);
     color: black;
     text-align: center;
+    font-family: var(--font-main);
 }
-h1{ 
-    color: rgb(255, 255, 255);
-    font-size: 50px;
-    font-family: 'Arial';
-    margin: 15px;
-}
-h2{ 
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-    font-family: 'Arial';
-    margin: 15px;
-}
-h3{ 
-    color: rgb(255, 255, 255);
-    font-size: 25px;
-    font-family: 'Arial';
-    margin: 15px;
-}
-p{ 
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    font-family: 'Arial';
-    font-style: italic;
-    margin: 15px;
-}
-footer
-{
-background-color: rgb(85, 85, 85);
-font-size: 2px;
-color: white;
-font-family: 'Arial';
-float: inline-end;
-text-align: center;
-width: 100%;
-}
-nav{
 
-}
-ul{
 
-}
-li{
-display: inline;
-margin-right: 20px;    
-}
-li a{
-color: rgb(255, 255, 255);
-text-decoration: none;
-font-size: 25px;
-font-family: 'Arial';
-}
-li a:hover{
-text-decoration: underline;
-}
-.active{
-text-decoration: underline;
-}
-p a{
-color: rgb(255, 255, 255);
-}
-div.info
-{
-color: white;
-background-color: rgb(85, 85, 85);
-border: 5px solid rgb(85, 85, 85);
-width: 100%;  
-text-align: center;
-height: 100%;
-}
-div.products{
-    color: white;
-    background-color: rgb(85, 85, 85);
-    border: 5px solid rgb(85, 85, 85);
-    width: 85%;
+header {
+    color: black;
     text-align: center;
-    margin-left: 7.5%;
-    height: 100%;
-    margin-top: 2.5%;
+    font-size: 10px;
+    background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
+    background-size: cover;
+}
+
+/* 🔹 Nadpisy a odstavce */
+h1, h2, h3, h4, p {
+    color: var(--text-color);
+    font-family: var(--font-main);
+    margin: 15px;
+}
+
+h1 { font-size: 50px; }
+h2 { font-size: 30px; }
+h3 { font-size: 25px; }
+h4, p { font-size: 20px; font-style: italic; }
+
+/* 🔹 Footer */
+footer {
+    background-color: var(--bg-main);
+    font-size: 12px;
+    color: var(--text-color);
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* 🔹 Navigace */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 25px;
+}
+
+nav ul li a:hover, .active {
+    text-decoration: underline;
+}
+
+/* 🔹 Odkazy */
+p a {
+    color: var(--text-color);
+}
+
+/* 🔹 Bloky */
+div.info, div.products {
+    background-color: var(--bg-main);
+    border: 5px solid var(--bg-main);
+    text-align: center;
+    text-align: center;
+}
+
+div.products {
+    width: 85%;
+    margin: 2.5% auto;
     display: flex;
-    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
-h2 a{
-    color: white;
-    text-decoration: none;
-}
-h2 a:hover{
-    color: white;
-    text-decoration: underline;
-}
-div.bor{
-    border: 2px solid rgb(255, 255, 255);
-}
-div.buk{
-    border: 2px solid rgb(255, 255, 255);
-}
-div.dub{
-    border: 2px solid rgb(255, 255, 255);
-}
-div.javor{
-    border: 2px solid rgb(255, 255, 255);
-}
-div.smrk{
-    border: 2px solid rgb(255, 255, 255);
-}
-div.topol{
-    border: 2px solid rgb(255, 255, 255);
-}
-.hidden{
-    display: none;
-}
-html{
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;   
-}
-div.product_form{
-    display: grid;
-    gap: 5px;
-    grid-template-columns: repeat(6, 0.5fr);
-    grid-template-rows: repeat(1, 0.5fr);
-    text-align: center;
-}
-input{
-background-color: transparent;
-color: white;
-border: 2px solid black;
-font-size: 20px;
-font-family: Arial, Helvetica, sans-serif;
-text-align: center;
-border-radius: 15px;
-}
-label{
-    background-color: transparent;
-    color: white;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-label a{
-    color: white;
-    text-decoration: underline;
-}
-input[type="checkbox"]:checked + label::after {
-    position: absolute;
-    top: 2px;
-    left: 7px;
-    font-size: 20px;
-    color: white;
-}
-h4 {
-    color: white;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif; 
-}
-input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-}
-input[type="checkbox"]:checked {
-    background-color: #4CAF50; /* Zelené pozadí pro zaškrtnutý */
-    border-color: #4CAF50; /* Zelená barva okraje */
+
+/* 🔹 Styl pro jednotlivé produkty */
+div.bor, div.buk, div.dub, div.javor, div.smrk, div.topol {
+    border: 2px solid var(--border-color);
 }
 
-input[type="checkbox"]:not(:checked) {
-    background-color: #f44336; /* Červené pozadí pro nezaškrtnutý */
-    border-color: #f44336; /* Červená barva okraje */
+/* 🔹 Skrytí prvků */
+.hidden {
+    display: none;
 }
-input[type="submit"]{
-    background-color: transparent;
-    color: white;
-    border: 2px solid black;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+
+/* 🔹 Optimalizace formulářů */
+div.product_form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
     text-align: center;
-    cursor: pointer;
+    max-width: auto;
+    margin: auto;
 }
-select {
-    color: rgb(255, 255, 255);
+
+input, select {
     background-color: transparent;
+    color: var(--text-color);
     border: 2px solid black;
     font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-main);
     text-align: center;
     border-radius: 15px;
 }
-option{
-    background-color: rgb(85, 85, 85);
-    color: rgb(255, 255, 255);
+
+label {
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 20px;
+    font-family: var(--font-main);
+    text-align: center;
+}
+
+label a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* 🔹 Checkbox */
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    border-radius: 30px;
+    appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+input[type="checkbox"]:not(:checked) {
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+/* 🔹 Tlačítka */
+input[type="submit"] {
+    cursor: pointer;
+}
+
+/* 🔹 Výběrové menu */
+option {
+    background-color: var(--bg-main);
+    color: var(--text-color);
 }

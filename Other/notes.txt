@@ -1,7 +1,10 @@
 - Mezery mezi produkty (př: Line 98) ✔
-- Rodělení Jakosti A/B (checkbox)
-- Přidat dopravu do formuláře (osobní vyzvednutí, Česká pošta, Zásilkovna) ✔ + připočítání ceny
+- Rodělení Jakosti A/B (checkbox) ✔
+- Přidat dopravu do formuláře (osobní vyzvednutí, Česká pošta, Zásilkovna) ✔ + připočítání ceny ✔
 - Rozdělit Katalog a Eshop (2 různé stránky) ✔
-- Udělat pozadí na celou stránku, šedé (Eshop příklad)
-- Možnost aby Blažek mohl nastavovat ceny + počet skladem sám (Jiné html)
-- Nastavit všechny stránky aby bylo možné používat to i na mobilu
+- Udělat pozadí na celou stránku, šedé (Eshop příklad) ✔
+- Možnost aby Blažek mohl nastavovat ceny + počet skladem sám (Jiné html) Priorita4!
+- Nastavit všechny stránky aby to bylo možné používat i na mobilu - V budoucnu
+- Prokliky v Eshopu na daný produkt (př: Line 77) Priorita1!
+- nainstalovat PHPmailer Priorita2!
+- Nastavit SMTP od seznamu Priorita3!

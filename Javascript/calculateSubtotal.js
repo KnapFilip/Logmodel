@@ -249,22 +249,25 @@ function calculateSubtotalJavor() {
     document.getElementById("subtotal_javor").value = subtotal.toFixed(1) + " Kč";
 }
 function calculateSubtotalDop() {
-    // Ceník
+    // Ceník částek
     const prices = {
         "osb": 0,
         "zas": 85,
-        "cp": 100,
+        "cp": 100
     };
 
-    // Celkový součet
-    let subtotal = 0;
+    // Získání vybrané hodnoty
+    const selectedValue = document.getElementById("dop").value;
 
-    // Projdeme všechny položky
-    for (let id in prices) {
-        const quantity = document.getElementById(id).value;
-        subtotal += Number(quantity) * prices[id];
-    }
+    // Přepočet na číslo a výpočet celkové částky
+    let total = prices[selectedValue] || 0;
 
-    // Zobrazení mezisoučtu
-    document.getElementById("subtotal_dop").value = subtotal.toFixed(1) + " Kč";
+    // Zobrazení celkové částky
+    document.getElementById("subtotal_dop").value = total + " Kč";
 }
+
+// Přidání event listeneru na změnu v selectu
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("dop").addEventListener("change", calculateSubtotalDop);
+});
+

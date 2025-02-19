@@ -1,20 +1,26 @@
-header{
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 10px;
-    font-family: 'Arial';
-    border-radius: 15px;
-    padding: 5px;
+/* 🔹 Definování hlavních proměnných */
+:root {
+    --bg-main: rgb(85, 85, 85);
+    --text-color: white;
+    --border-color: white;
+    --font-main: Arial, Helvetica, sans-serif;
 }
-body{
-    background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
-    background-repeat: no-repeat;
-    background-size: 125%;
-    background-position-y: 13%;
+
+/* 🔹 Obecné styly */
+body {
+    background-color: var(--bg-main);
     color: black;
     text-align: center;
-    
+    font-family: var(--font-main);
+}
+
+
+header {
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
+    background-size: cover;
 }
 h1{ 
     color: rgb(255, 255, 255);

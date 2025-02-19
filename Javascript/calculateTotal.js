@@ -100,6 +100,47 @@ function calculateSubtotalJavor() {
     }
     document.getElementById("subtotal_javor").value = subtotal.toFixed(1) + " Kč";
 }
+// Funkce pro výpočet dopravnho
+function calculateSubtotalDop() {
+    // Ceník částek
+    const prices = {
+        "osb": 0,
+        "zas": 85,
+        "cp": 100
+    };
+
+    // Získání vybrané hodnoty
+    const selectedValue = document.getElementById("dop").value;
+
+    // Přepočet na číslo a výpočet celkové částky
+    let total = prices[selectedValue] || 0;
+
+    // Zobrazení celkové částky
+    document.getElementById("subtotal_dop").value = total + " Kč";
+}
+
+// Přidání event listeneru na změnu v selectu
+document.addEventListener("DOMContentLoaded", function() {
+    // Přidání event listeneru na změnu v selectu pro dopravu
+    document.getElementById("dop").addEventListener("change", function() {
+        calculateSubtotalDop();
+        calculateTotal();
+    });
+
+    // Přidání event listenerů na všechny inputy pro přepočítání cen
+    document.querySelectorAll("input[type='number']").forEach(input => {
+        input.addEventListener('input', function() {
+            calculateSubtotalSmrk();
+            calculateSubtotalBor();
+            calculateSubtotalBuk();
+            calculateSubtotalDub();
+            calculateSubtotalTopol();
+            calculateSubtotalJavor();
+            calculateSubtotalDop();
+            calculateTotal();
+        });
+    });
+});
 
 // Funkce pro výpočet celkového součtu
 function calculateTotal() {
@@ -110,19 +151,10 @@ function calculateTotal() {
     const subtotalTopol = parseFloat(document.getElementById("subtotal_topol").value) || 0;
     const subtotalJavor = parseFloat(document.getElementById("subtotal_javor").value) || 0;
 
-    const total = subtotalSmrk + subtotalBor + subtotalBuk + subtotalDub + subtotalTopol + subtotalJavor + dop;
-    document.getElementById("total").value = total.toFixed(1) + " Kč";
+    // Oprava převodu hodnoty dopravy na číslo
+    const subtotal_dop = parseFloat(document.getElementById("subtotal_dop").value.replace(" Kč", "")) || 0;
+
+    const total = subtotalSmrk + subtotalBor + subtotalBuk + subtotalDub + subtotalTopol + subtotalJavor + subtotal_dop;
+    document.getElementById("total").value = total.toFixed(0) + " Kč";
 }
 
-// Automatické přepočítání součtu při změně hodnot
-document.querySelectorAll("input[type='number']").forEach(input => {
-    input.addEventListener('input', function() {
-        calculateSubtotalSmrk();
-        calculateSubtotalBor();
-        calculateSubtotalBuk();
-        calculateSubtotalDub();
-        calculateSubtotalTopol();
-        calculateSubtotalJavor();
-        calculateTotal(); // Po každém přepočtu mezisoučtu
-    });
-});

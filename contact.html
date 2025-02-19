@@ -11,8 +11,10 @@
     <h1 class="header">Logmodel</h1>
     <img src="images/Logo1.png" alt="Logo">
 </header>
+
 <br>
 <br>
+
 <body>
     <div class="info">
         <div class="preface">
@@ -30,12 +32,14 @@
                 </ul>
             </nav>
         </div>
+
         <div class="contact">
             <div class="contact_info">
                 <h2>Kontakt na nás</h2>
                 <p>Email: dombla@email.cz</p>
                 <p>Tel: +420 722 198 937</p>
             </div>
+
             <div class="form">
                 <form action="php/email_contact.php" method="POST">
                     <label for="name">Jméno:</label><br>
@@ -46,6 +50,7 @@
                     <textarea id="message" name="message" required></textarea><br><br>
                     <input type="submit" value="Odeslat">
                 </form>
+
                 <script>
                     const urlParams = new URLSearchParams(window.location.search);
                     const status = urlParams.get('status');
@@ -58,9 +63,10 @@
             </div>
         </div>
     </div>
+    
 </body>
 <footer>
-        <p>Created by Filip Knap & Alex Kačura with lot of ☕ and ❤️</p>
-        <p>© 2025 Knap Filip</p>
+    <p>Created by Filip Knap with lot of ☕ and ❤️</p>
+    <p>© 2025 Knap Filip</p>
     </footer>
 </html>
