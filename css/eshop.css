@@ -63,7 +63,7 @@ nav ul li a {
 }
 
 nav ul li a:hover, .active {
-    text-decoration: underline;
+    text-decoration: underline white;
 }
 
 /* 🔹 Odkazy */

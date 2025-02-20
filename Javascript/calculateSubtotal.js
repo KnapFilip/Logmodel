@@ -251,9 +251,9 @@ function calculateSubtotalJavor() {
 function calculateSubtotalDop() {
     // Ceník částek
     const prices = {
-        "osb": 0,
-        "zas": 85,
-        "cp": 100
+        "osobni_vyzvednuti": 0,
+        "Zasilkovna": 85,
+        "Ceska_Posta": 100
     };
 
     // Získání vybrané hodnoty
