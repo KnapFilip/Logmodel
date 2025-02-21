@@ -223,7 +223,7 @@ function calculateSubtotalDop() {
     const prices = {
         "osobni_vyzvednuti": 0,
         "Zasilkovna": 89,
-        "Ceska_Posta": 100
+        "Ceska_Posta": 99
     };
 
     // Získání vybrané hodnoty
