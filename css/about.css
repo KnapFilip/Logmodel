@@ -15,12 +15,17 @@ body {
 }
 
 
+/* 🔹 Header */
 header {
     color: black;
     text-align: center;
     font-size: 10px;
     background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
     background-size: cover;
+    padding: 50px 0;
+    background-position: center center;
+    height: 300px;
+    width: 100vw;
 }
 h1{ 
     color: rgb(255, 255, 255);

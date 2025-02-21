@@ -134,4 +134,28 @@ html{
 }
 .active{
     text-decoration: underline;
+}
+
+/* Mobile-specific styles for iPhone SE 2022 */
+@media (max-width: 768px) {
+    div.info {
+        width: 95vw;  /* Adjust width for iPhone SE 2022 */
+        margin-left: 2.5%;  /* Center horizontally */
+        margin-right: 2.5%;  /* Center horizontally */
     }
+    div.contact {
+        width: 95vw; /* Adjust width for iPhone SE 2022 */
+    }
+    div.contact_info {
+        width: 95vw; /* Adjust width for iPhone SE 2022 */
+    }
+    div.form {
+        width: 95vw; /* Adjust width for iPhone SE 2022 */
+    }
+    input[type=submit] {
+        width: 70%; /* Adjust button size for smaller screens */
+    }
+    label {
+        width: 100%; /* Adjust label width for mobile */
+    }
+}

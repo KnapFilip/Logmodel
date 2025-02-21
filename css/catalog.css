@@ -1,13 +1,14 @@
-header{
-    color: rgb(0, 0, 0);
+/* 🔹 Header */
+header {
+    color: black;
     text-align: center;
     font-size: 10px;
-    font-family: 'Arial';
-    background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    background-position: fixed;
-    background-position-y: 50%;
+    background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
+    background-size: cover;
+    padding: 50px 0;
+    background-position: center center;
+    height: 300px;
+    width: 100vw;
 }
 body{
     background-color: rgb(85, 85, 85);
