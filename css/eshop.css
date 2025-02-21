@@ -221,7 +221,7 @@ option {
 
     /* Image responsiveness */
     img {
-        max-width: 100%;
+        max-width: 100vw;
         height: auto; /* Ensure images scale with the screen */
         display: block;
         margin: 10px auto; /* Center the images */
