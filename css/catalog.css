@@ -86,7 +86,7 @@ height: 100%;
 @media (max-width: 768px){
     div.disclaimer
     {
-        width: 100vw;
+        width: 95vw;
     }
 }
 div.products{
