@@ -40,11 +40,13 @@
             </div>
 
             <div class="form">
-                <form action="php/email_contact.php" method="POST">
+                <form action="php/email.php" method="POST">
                     <label for="name">Jméno:</label><br>
                     <input type="text" id="name" name="name" required><br>
                     <label for="email">Email:</label><br>
                     <input type="email" id="email" name="email" required><br>
+                    <label for="subject">Čeho se email týká:</label>
+                    <input type="text" name="subject" id="subject" required>
                     <label for="message">Zpráva:</label><br>
                     <textarea id="message" name="message" required></textarea><br><br>
                     <input type="submit" value="Odeslat">

@@ -1,19 +1,11 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $message = htmlspecialchars(trim($_POST['message']));
+$to = "KnapFilip@email.cz";
+$subject = "Test Email";
+$message = "This is a test email.";
+$headers = "From: sender@example.com";
 
-    $to = "KnapFilip@email.cz";
-    $subject = "Objednávka-Logmodel";
-    $body = "Jméno: $name\nEmail: $email\nZpráva:\n$message";
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Zpráva byla úspěšně odeslána.";
-    } else {
-        echo "Nastala chyba při odesílání zprávy.";
-    }
+if (mail($to, $subject, $message, $headers)) {
+    echo "Email sent successfully.";
 } else {
-    echo "Neplatný požadavek.";
+    echo "Failed to send email.";
 }
