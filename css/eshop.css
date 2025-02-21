@@ -46,6 +46,9 @@ footer {
     text-align: center;
     width: 100%;
     padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /* 🔹 Navigace */
@@ -79,12 +82,12 @@ div.info, div.products {
     background-color: var(--bg-main);
     border: 5px solid var(--bg-main);
     text-align: center;
-    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 div.products {
-    width: 85%;
-    margin: 2.5% auto;
     display: flex;
     text-align: center;
     flex-wrap: wrap;
@@ -108,8 +111,8 @@ div.product_form {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     text-align: center;
-    max-width: auto;
     margin: auto;
+    width: 100%;
 }
 
 input, select {
@@ -120,6 +123,9 @@ input, select {
     font-family: var(--font-main);
     text-align: center;
     border-radius: 15px;
+    width: 90%; /* Ensure inputs don’t stretch too wide */
+    max-width: 400px;
+    margin: 5px auto;
 }
 
 label {
@@ -157,6 +163,9 @@ input[type="checkbox"]:not(:checked) {
 /* 🔹 Tlačítka */
 input[type="submit"] {
     cursor: pointer;
+    width: 90%;
+    max-width: 400px;
+    margin: 5px auto;
 }
 
 /* 🔹 Výběrové menu */
@@ -167,24 +176,29 @@ option {
 
 /* 🔹 Mobile responsiveness (iPhone SE 2022) */
 @media (max-width: 768px) {
+    body {
+        padding: 0 5%; /* Give a bit of padding on the sides */
+    }
+
     h1 { font-size: 35px; } /* Smaller heading size on mobile */
     h2 { font-size: 24px; } /* Smaller subheading on mobile */
     h3 { font-size: 20px; }
     p, h4 { font-size: 16px; } /* Adjust text size for readability on small screens */
 
-    /* Adjust grid for products */
+    /* Adjust products layout */
     div.products {
         width: 95%;
         margin: 2% auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        grid-template-rows: repeat(3, auto); /* Adjust rows to fit mobile */
         gap: 15px;
     }
 
     div.product_form {
-        grid-template-columns: 1fr; /* Single column on mobile for forms */
+        grid-template-columns: 1fr; /* Single column for mobile */
         grid-template-rows: auto;
+        width: 90%; /* Ensure form is responsive */
     }
 
     nav ul li {
@@ -194,5 +208,6 @@ option {
 
     footer {
         font-size: 10px; /* Smaller footer text for mobile */
+        position: relative;
     }
 }
