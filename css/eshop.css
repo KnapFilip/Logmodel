@@ -12,15 +12,18 @@ body {
     color: black;
     text-align: center;
     font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
 }
 
-
+/* 🔹 Header */
 header {
     color: black;
     text-align: center;
     font-size: 10px;
     background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
     background-size: cover;
+    padding: 50px 0;
 }
 
 /* 🔹 Nadpisy a odstavce */
@@ -160,4 +163,36 @@ input[type="submit"] {
 option {
     background-color: var(--bg-main);
     color: var(--text-color);
+}
+
+/* 🔹 Mobile responsiveness (iPhone SE 2022) */
+@media (max-width: 768px) {
+    h1 { font-size: 35px; } /* Smaller heading size on mobile */
+    h2 { font-size: 24px; } /* Smaller subheading on mobile */
+    h3 { font-size: 20px; }
+    p, h4 { font-size: 16px; } /* Adjust text size for readability on small screens */
+
+    /* Adjust grid for products */
+    div.products {
+        width: 95%;
+        margin: 2% auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 15px;
+    }
+
+    div.product_form {
+        grid-template-columns: 1fr; /* Single column on mobile for forms */
+        grid-template-rows: auto;
+    }
+
+    nav ul li {
+        display: block; /* Stack navigation links on mobile */
+        margin-right: 0;
+    }
+
+    footer {
+        font-size: 10px; /* Smaller footer text for mobile */
+    }
 }
