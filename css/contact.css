@@ -1,17 +1,16 @@
 header{
-    background-color: transparent;
     color: rgb(0, 0, 0);
     text-align: center;
     font-size: 10px;
     font-family: 'Arial';
-    border-radius: 15px;
-    padding: 5px;
-}
-body{
     background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
     background-repeat: no-repeat;
-    background-size: 125%;
-    background-position-y: 13%;
+    background-size: 100%;
+    background-position: fixed;
+    background-position-y: 50%;
+}
+body{
+    background-color: rgb(85, 85, 85);
     color: black;
     text-align: center;
 }

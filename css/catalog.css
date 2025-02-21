@@ -5,7 +5,7 @@ header{
     font-family: 'Arial';
     background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100vw;
     background-position: fixed;
     background-position-y: 50%;
 }
@@ -83,20 +83,32 @@ width: 100%;
 text-align: center;
 height: 100%;
 }
+@media (max-width: 768px){
+    div.disclaimer
+    {
+        width: 100vw;
+    }
+}
 div.products{
     color: white;
     background-color: rgb(85, 85, 85);
     border: 5px solid rgb(85, 85, 85);
-    width: 85%;
+    width: 50%;
     text-align: center;
-    margin-left: 7.5%;
     height: 100%;
     margin-top: 2.5%;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(3, 0.5fr);
     grid-template-rows: repeat(2, 0.5fr);
-
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+@media (max-width: 768px) {
+    div.products {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+        grid-template-rows: repeat(4, 1fr); /* 4 rows for mobile */
+    }
 }
 h2 a{
     color: white;
