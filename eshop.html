@@ -61,7 +61,7 @@
                 <label for="email">E-mail</label><br>
                 <input type="email" name="email" id="email" required><br>
                 <input name="subject" type="hidden" value="Objednávka-Logmodel">
-                <label for="phone">Telefon</label><br>
+                <label for="phone">Telefon + Předvolba</label><br>
                 <input type="tel" name="phone" id="phone" required><br>
                 
                 
@@ -764,8 +764,8 @@
                 </div><br><br>
                 <select name="dop" id="dop">
                     <option value="Osobni_vyzvednuti">Osobní odběr 0Kč (Domluva přes email)</option>
-                    <option value="Zasilkovna">Zásilkovna 85Kč (Z-Box)</option>
-                    <option value="Ceska_Posta">Česká Pošta 100Kč (domů)</option>
+                    <option value="Zasilkovna">Zásilkovna 89Kč (Z-Box)</option>
+                    <option value="Ceska_Posta">Česká Pošta 99Kč (domů)</option>
                 </select><br><br>
                 <input type="text" id="subtotal_dop" value="0 Kč" readonly hidden><br>             
                 <label for="total">Celková Cena</label><br>
@@ -782,6 +782,5 @@
     <p>© 2025 Knap Filip</p>
 </footer>
 <script src="Javascript/checkbox.js"></script>
-<script src="Javascript/calculateSubtotal.js"></script>
-<script src="Javascript/calculateTotal.js"></script>
+<script src="Javascript/price.js"></script>
 </html>
