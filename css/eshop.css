@@ -26,7 +26,7 @@ header {
     padding: 50px 0;
     background-position: center center;
     height: 300px;
-    width: 100%;
+    width: 100vw;
 }
 
 /* 🔹 Nadpisy a odstavce */
@@ -209,7 +209,7 @@ option {
     }
 
     nav ul li {
-        display: block; /* Stack navigation links on mobile */
+        display: inline-block; /* Stack navigation links on mobile */
         margin-right: 0;
     }
 
