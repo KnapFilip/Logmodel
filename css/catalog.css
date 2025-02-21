@@ -17,7 +17,7 @@ body{
 @media (max-width: 768px){
     html
     {
-        width: 95vw;
+        width: 95vw; /* Adjust width to fit the screen */
         margin: auto;
         margin-left: auto; /* Center horizontally */
         margin-right: auto; /* Center horizontally */
@@ -97,7 +97,7 @@ margin-right: auto; /* Center horizontally */
 @media (max-width: 768px){
     div.disclaimer
     {
-        width: 95vw;
+        width: 95vw; /* Adjust width to fit the screen */
         margin: auto;
         margin-left: auto; /* Center horizontally */
         margin-right: auto; /* Center horizontally */
@@ -124,6 +124,7 @@ div.products{
         grid-template-rows: repeat(4, 1fr); /* 4 rows for mobile */
         margin-left: auto; /* Center horizontally */
         margin-right: auto; /* Center horizontally */
+        width: 95vw; /* Adjust width to fit mobile screen */
     }
 }
 h2 a{
