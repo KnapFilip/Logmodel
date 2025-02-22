@@ -6,6 +6,6 @@
 - Nastavit všechny stránky aby to bylo možné používat i na mobilu - ✔
 - Prokliky v Eshopu na daný produkt (př: Line 77) ✔
 - nainstalovat PHPmailer - ✔
-- Nastavit SMTP od seznamu - vymyslím z youtube
+- Nastavit SMTP od seznamu - vymyslím z youtube (✔ na gmail funguje na 50%)
 - Vyřešit s Blažkem Endoru nebo Helkor (Ten spíše) na jeho jméno (endora domena zdarma, Helkor potřeba koupit domenu (Wedos.cz/Vedos.cz)) Helkor + Wedos = 459 ročně. Endora = Zdarma. Wedos = 1500kč ročně
 - Vysvětlit Blažkovi co může upravovat a co ne
