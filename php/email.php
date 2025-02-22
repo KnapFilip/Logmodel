@@ -1,45 +1,61 @@
 <?php
 
+//Co to má používat z PHP mailer
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-require 'path/to/PHPMailer/src/Exception.php';
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/SMTP.php';
+//Cesta k PHPmailer
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-    // Set up PHPMailer
+//Config.php s informacemi o Emailu
+require 'config/config.php';
+
+function sendemail($name, $email, $subject, $message)
+{
+    global $config;
+    // Vytvoří nová proces v PHPmailer
     $mail = new PHPMailer(true);
 
-    try {
-        //Server settings
-        $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.seznam.cz';                        // Seznam SMTP server
-        $mail->SMTPAuth = true;                                // Enable SMTP authentication
-        $mail->Username = 'KnapFilip@email.cz';              // Your Seznam email address
-        $mail->Password = 'ReXReX1219@9';                     // Your Seznam email password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;    // Use TLS encryption
-        $mail->Port = 587;                                     // TCP port to connect to (587 for TLS)
+    //Použití SMTP protokolu k odeslání emailu
+    $mail->isSMTP();
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
+    $mail->SMTPAuth = true;                                   // Enable SMTP authentication
+    $mail->SMTPSecure = 'tls';                                 // Enable TLS encryption
+    $mail->Host = $config['mailhost'];                    // SMTP server address
+    $mail->Port = 587;                                         // SMTP server port
+    $mail->Username = $config['username'];               // SMTP server username
+    $mail->Password = $config['password'];               // SMTP server password
 
-        //Recipients
-        $mail->setFrom('your_email@seznam.cz', 'Your Name');
-        $mail->addAddress('recipient@example.com');            // Set recipient's email address
+    // Odesílatel
+    $mail->setFrom($config['send_from'], $config['send_from_name']);
 
-        // Content
-        $mail->isHTML(true);                                   // Set email format to HTML
-        $mail->Subject = $subject;                             // Use the subject from the form
-        $mail->Body    = "<strong>Name:</strong> $name<br><strong>Email:</strong> $email<br><strong>Message:</strong><br>" . nl2br($message);
+    // Příjemce
+    $mail->addAddress($email);
 
-        // Send the email
-        $mail->send();
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
+    // Odpověd
+    $mail->addReplyTo($config['reply_to'], $config['reply_to_name']);
+
+    // Odeslání HTML emailu
+    $mail->isHTML(true);
+
+    // Předmět
+    $mail->Subject = $subject;
+
+    // Zpráva
+    $mail->Body = $message;
+
+    // Zpráva
+    $mail->AltBody = $message;
+
+    // Odeslání emailu
+    if(!$mail->send()){
+        return "Email nebylo možné odeslat, zkuste znovu";}
+    else{ 
+        return "Email byl úspěšně odeslán";}
+    
 }

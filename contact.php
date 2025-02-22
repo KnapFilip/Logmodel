@@ -1,5 +1,8 @@
+<?php require("email.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +43,7 @@
             </div>
 
             <div class="form">
-                <form action="php/email.php" method="POST">
+                <form action="" method="POST">
                     <label for="name">Jméno:</label><br>
                     <input type="text" id="name" name="name" required><br>
                     <label for="email">Email:</label><br>
@@ -54,11 +57,11 @@
             </div>
         </div>
     </div>
-    
+
 </body>
 <footer>
     <p>Created by Filip Knap with lot of ☕ and ❤️</p>
     <p>© 2025 Knap Filip</p>
-    </footer>
-    
+</footer>
+
 </html>
