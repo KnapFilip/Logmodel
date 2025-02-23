@@ -9,3 +9,4 @@
 - Nastavit SMTP od seznamu - vymyslím z youtube
 - Vyřešit s Blažkem Endoru nebo Helkor (Ten spíše) na jeho jméno (endora domena zdarma, Helkor potřeba koupit domenu (Wedos.cz/Vedos.cz)) Helkor + Wedos = 459 ročně. Endora = Zdarma. Wedos = 1500kč ročně
 - Vysvětlit Blažkovi co může upravovat a co ne
+- Objednávkový systém (objednávkový_system.txt) (https://docs.google.com/spreadsheets/d/1xKpZ_phQzOR8e3-nqF34Rsl9uJldq7YXNf1137iR110/edit?usp=sharing)

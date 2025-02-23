@@ -141,40 +141,77 @@ header("Location: login.php");
 exit;
 ?>
 
-8 # datil objednávky
+8 # order_detail
 <?php
-session_start();
-if (!isset($_SESSION["admin_logged_in"])) {
-    header("Location: login.php");
-    exit;
-}
+// Předpokládám, že máš připojení k databázi a že získáváš ID objednávky
+$limit = 10;  // Počet produktů na stránce
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
 
-if (!isset($_GET['id'])) {
-    echo "ID objednávky není definováno.";
-    exit;
-}
-
-$order_id = $_GET['id'];
+// Připojení k databázi
 $pdo = new PDO("mysql:host=localhost;dbname=eshop", "root", "");
 
-// Získání detailů objednávky podle ID
-$stmt = $pdo->prepare("SELECT * FROM orders WHERE id = :id");
-$stmt->execute([':id' => $order_id]);
-$order = $stmt->fetch(PDO::FETCH_ASSOC);
+// Získání produktů pro aktuální stránku
+$stmt = $pdo->prepare("SELECT * FROM order_products WHERE order_id = :order_id LIMIT :limit OFFSET :offset");
+$stmt->execute([':order_id' => $order_id, ':limit' => $limit, ':offset' => $offset]);
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if (!$order) {
-    echo "Objednávka nebyla nalezena.";
-    exit;
+// Zobrazení produktů
+echo "<h3>Produkty v objednávce</h3>";
+echo "<table border='1'>";
+echo "<tr><th>Produkt</th><th>Množství</th><th>Stav</th><th>Akce</th></tr>";
+foreach ($products as $product) {
+    // Zobrazení informací o produktu a formulář pro změnu stavu
+    echo "<tr>";
+    echo "<td>{$product['product_name']}</td>";
+    echo "<td>{$product['quantity']}</td>";
+    echo "<td>
+            <form action='update_status.php' method='POST'>
+                <input type='hidden' name='product_id' value='{$product['product_id']}'>
+                <select name='status'>
+                    <option value='Připraven' " . ($product['status'] == 'Připraven' ? 'selected' : '') . ">Připraven</option>
+                    <option value='V přípravě' " . ($product['status'] == 'V přípravě' ? 'selected' : '') . ">V přípravě</option>
+                    <option value='Čeká' " . ($product['status'] == 'Čeká' ? 'selected' : '') . ">Čeká</option>
+                </select>
+                <input type='submit' value='Uložit změny'>
+            </form>
+          </td>";
+    echo "</tr>";
 }
+echo "</table>";
 
-echo "<h2>Detail objednávky</h2>";
-echo "<p><strong>Jméno:</strong> {$order['name']}</p>";
-echo "<p><strong>Email:</strong> {$order['email']}</p>";
-echo "<p><strong>Telefon:</strong> {$order['phone']}</p>";
-echo "<p><strong>Adresa:</strong> {$order['address']}</p>";
-echo "<p><strong>Platební metoda:</strong> {$order['payment_method']}</p>";
-echo "<p><strong>Produkty:</strong> {$order['products']}</p>";
-echo "<p><strong>Celková cena:</strong> {$order['total_price']} Kč</p>";
-echo "<p><strong>Status:</strong> {$order['status']}</p>";
-echo "<a href='admin_panel.php'>Zpět na seznam objednávek</a>";
+// Navigace mezi stránkami
+$totalProducts = $pdo->prepare("SELECT COUNT(*) FROM order_products WHERE order_id = :order_id");
+$totalProducts->execute([':order_id' => $order_id]);
+$total = $totalProducts->fetchColumn();
+$totalPages = ceil($total / $limit);
+
+echo "<p>";
+if ($page > 1) {
+    echo "<a href='order_detail.php?id={$order_id}&page=" . ($page - 1) . "'>Předchozí</a> | ";
+}
+if ($page < $totalPages) {
+    echo "<a href='order_detail.php?id={$order_id}&page=" . ($page + 1) . "'>Další</a>";
+}
+echo "</p>";
+?>
+
+
+9 # update_status.php
+
+<?php
+// Připojení k databázi
+$pdo = new PDO("mysql:host=localhost;dbname=eshop", "root", "");
+
+// Získání dat z formuláře
+$product_id = $_POST['product_id'];
+$status = $_POST['status'];
+
+// Aktualizace stavu v databázi
+$stmt = $pdo->prepare("UPDATE order_products SET status = :status WHERE product_id = :product_id");
+$stmt->execute([':status' => $status, ':product_id' => $product_id]);
+
+// Přesměrování zpět na stránku s objednávkami
+header("Location: order_detail.php?id={$_GET['id']}&page={$_GET['page']}");
+exit;
 ?>
