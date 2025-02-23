@@ -1,15 +1,4 @@
 <?php require("php/email.php"); ?>
-<?php
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    $response = "Všechna pole musí být vyplněna";
-} else {
-    $response = sendemail($_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message']);
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,14 +53,6 @@ if (isset($_POST['submit'])) {
                     <label for="message">Zpráva:</label><br>
                     <textarea id="message" name="message" required></textarea><br><br>
                     <input type="submit" value="Odeslat">
-
-                    <?php
-                    if (@$response == "success") {
-                        echo "<p>Email úspěšně odeslán.</p>";
-                    } else {
-                        echo "<p>Chyba při odesílání emailu.</p>";
-                    }
-                    ?>
                 </form>
             </div>
         </div>

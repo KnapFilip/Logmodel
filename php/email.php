@@ -1,61 +1,49 @@
 <?php
 
-//Co to má používat z PHP mailer
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-//Cesta k PHPmailer
-
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
-
-//Config.php s informacemi o Emailu
-require 'config/config.php';
+require 'config.php';
 
 function sendemail($name, $email, $subject, $message)
 {
     global $config;
-    // Vytvoří nová proces v PHPmailer
     $mail = new PHPMailer(true);
 
-    //Použití SMTP protokolu k odeslání emailu
-    $mail->isSMTP();
-    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
-    $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-    $mail->SMTPSecure = 'tls';                                 // Enable TLS encryption
-    $mail->Host = $config['mailhost'];                    // SMTP server address
-    $mail->Port = 587;                                         // SMTP server port
-    $mail->Username = $config['username'];               // SMTP server username
-    $mail->Password = $config['password'];               // SMTP server password
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = $config['username'];
+        $mail->Password = $config['password'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
 
-    // Odesílatel
-    $mail->setFrom($config['send_from'], $config['send_from_name']);
+        $mail->setFrom($config['send_from'], $config['send_from_name']);
+        $mail->addAddress($config['send_from'], 'Admin'); // Poslat adminovi
+        $mail->addCC($email, $name); // Kopie uživateli
+        $mail->addReplyTo($config['reply_to'], $config['reply_to_name']);
 
-    // Příjemce
-    $mail->addAddress($email);
+        $mail->isHTML(true);
+        $mail->Subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
+        $mail->Body = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
+        $mail->AltBody = html_entity_decode(strip_tags($message));
 
-    // Odpověd
-    $mail->addReplyTo($config['reply_to'], $config['reply_to_name']);
-
-    // Odeslání HTML emailu
-    $mail->isHTML(true);
-
-    // Předmět
-    $mail->Subject = $subject;
-
-    // Zpráva
-    $mail->Body = $message;
-
-    // Zpráva
-    $mail->AltBody = $message;
-
-    // Odeslání emailu
-    if(!$mail->send()){
-        return "Email nebylo možné odeslat, zkuste znovu";}
-    else{ 
-        return "Email byl úspěšně odeslán";}
-    
+        if ($mail->send()) {
+            return "Email byl úspěšně odeslán!";
+        } else {
+            return "Chyba: Email se nepodařilo odeslat.";
+        }
+    } catch (Exception $e) {
+        return "Chyba při odesílání emailu: " . $mail->ErrorInfo;
+    }
 }
+
+// Testovací volání (odkomentuj pro test)
+// echo sendemail('Testovací uživatel', 'tvuj@email.cz', 'Testovací email', 'Toto je testovací zpráva.');
+
+?>
