@@ -1,0 +1,180 @@
+
+1 # Databázová struktura (database.sql)
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    address TEXT NOT NULL,
+    payment_method VARCHAR(50) NOT NULL,
+    products TEXT NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+2 # Objednávkový formulář (index.html)
+<form id="orderForm">
+    <label>Jméno:</label>
+    <input type="text" name="name" required>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <label>Adresa:</label>
+    <textarea name="address" required></textarea>
+    <label>Platební metoda:</label>
+    <select name="payment_method">
+        <option value="card">Karta</option>
+        <option value="bank_transfer">Bankovní převod</option>
+    </select>
+    <h3>Produkty:</h3>
+    <div id="products">
+        <input type="hidden" name="products" id="productsInput">
+    </div>
+    <button type="submit">Odeslat objednávku</button>
+</form>
+
+3 # PHP Zpracování objednávky (order.php)
+<?php
+$pdo = new PDO("mysql:host=localhost;dbname=eshop", "root", "");
+$name = $_POST['name'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+$payment_method = $_POST['payment_method'];
+$products = $_POST['products'];
+$total_price = 0;
+$productsArray = json_decode($products, true);
+foreach ($productsArray as $product) {
+    $total_price += $product['quantity'] * $product['price'];
+}
+$stmt = $pdo->prepare("INSERT INTO orders (name, email, address, payment_method, products, total_price) 
+                       VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->execute([$name, $email, $address, $payment_method, $products, $total_price]);
+?>
+
+7 # Google Apps Script (Webhook)
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Orders");
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    data.id, data.name, data.email, data.address, 
+    data.payment_method, JSON.stringify(data.products), 
+    data.total_price, new Date()
+  ]);
+  return ContentService.createTextOutput("OK").setMimeType(ContentService.MimeType.TEXT);
+}
+
+4 # Admin přihlášení (login.php)
+
+<?php
+session_start();
+$pdo = new PDO("mysql:host=localhost;dbname=eshop", "root", "");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $stmt = $pdo->prepare("SELECT * FROM admins WHERE username = ?");
+    $stmt->execute([$username]);
+    $admin = $stmt->fetch();
+
+    if ($admin && password_verify($password, $admin["password"])) {
+        $_SESSION["admin_logged_in"] = true;
+        header("Location: admin_orders.php");
+        exit;
+    } else {
+        $error = "Neplatné přihlašovací údaje!";
+    }
+}
+?>
+
+<form method="POST">
+    <h2>Přihlášení do administrace</h2>
+    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <label>Uživatelské jméno:</label>
+    <input type="text" name="username" required>
+    <br>
+    <label>Heslo:</label>
+    <input type="password" name="password" required>
+    <br>
+    <button type="submit">Přihlásit se</button>
+</form>
+
+5 # Admin panel (admin.php)
+
+<?php
+session_start();
+if (!isset($_SESSION["admin_logged_in"])) {
+    header("Location: login.php");
+    exit;
+}
+
+$pdo = new PDO("mysql:host=localhost;dbname=eshop", "root", "");
+$stmt = $pdo->query("SELECT * FROM orders ORDER BY created_at DESC");
+$orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+echo "<h2>Seznam objednávek</h2>";
+echo "<a href='logout.php'>Odhlásit se</a>";
+echo "<table border='1'>";
+echo "<tr><th>Jméno</th><th>Email</th><th>Adresa</th><th>Celková cena</th><th>Produkty</th></tr>";
+foreach ($orders as $order) {
+    echo "<tr>
+            <td>{$order['name']}</td>
+            <td>{$order['email']}</td>
+            <td>{$order['address']}</td>
+            <td>{$order['total_price']} Kč</td>
+            <td>{$order['products']}</td>
+          </tr>";
+}
+echo "</table>";
+?>
+
+6 # odhlášení (logout.php)
+
+<?php
+session_start();
+session_destroy();
+header("Location: login.php");
+exit;
+?>
+
+8 # datil objednávky
+<?php
+session_start();
+if (!isset($_SESSION["admin_logged_in"])) {
+    header("Location: login.php");
+    exit;
+}
+
+if (!isset($_GET['id'])) {
+    echo "ID objednávky není definováno.";
+    exit;
+}
+
+$order_id = $_GET['id'];
+$pdo = new PDO("mysql:host=localhost;dbname=eshop", "root", "");
+
+// Získání detailů objednávky podle ID
+$stmt = $pdo->prepare("SELECT * FROM orders WHERE id = :id");
+$stmt->execute([':id' => $order_id]);
+$order = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$order) {
+    echo "Objednávka nebyla nalezena.";
+    exit;
+}
+
+echo "<h2>Detail objednávky</h2>";
+echo "<p><strong>Jméno:</strong> {$order['name']}</p>";
+echo "<p><strong>Email:</strong> {$order['email']}</p>";
+echo "<p><strong>Telefon:</strong> {$order['phone']}</p>";
+echo "<p><strong>Adresa:</strong> {$order['address']}</p>";
+echo "<p><strong>Platební metoda:</strong> {$order['payment_method']}</p>";
+echo "<p><strong>Produkty:</strong> {$order['products']}</p>";
+echo "<p><strong>Celková cena:</strong> {$order['total_price']} Kč</p>";
+echo "<p><strong>Status:</strong> {$order['status']}</p>";
+echo "<a href='admin_panel.php'>Zpět na seznam objednávek</a>";
+?>
