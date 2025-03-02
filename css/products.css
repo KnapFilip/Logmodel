@@ -1,87 +1,100 @@
-header{
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 10px;
-    font-family: 'Arial';
-    border-radius: 15px;
-    padding: 5px;
-}
-body{
-    background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-y: 13%;
+/* 🔹 Obecné styly */
+body {
     color: black;
     text-align: center;
+    overflow-x: hidden;
+    background-color: rgb(85, 85, 85);
+    margin: 5px;
+    padding: 0px;
 }
-h1{ 
+
+header {
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
+    background-size: cover;
+    padding: 50px 0;
+    background-position: center center;
+    height: 300px;
+    width: 99vw;
+}
+
+h1 {
     color: rgb(255, 255, 255);
     font-size: 50px;
     font-family: 'Arial';
     margin: 15px;
 }
-h2{ 
+
+h2 {
     color: rgb(255, 255, 255);
     font-size: 30px;
     font-family: 'Arial';
     margin: 15px;
 }
-h3{ 
+
+h3 {
     color: rgb(255, 255, 255);
     font-size: 25px;
     font-family: 'Arial';
     margin: 15px;
 }
-p{ 
+
+p {
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-family: 'Arial';
     font-style: italic;
     margin: 15px;
 }
-footer
-{
-color: rgb(255, 255, 255);
-font-size: 2px;
-font-family: 'Arial';
-float: inline-end;
-text-align: center;
-width: 100%;
-}
-ul{
 
+footer {
+    color: rgb(255, 255, 255);
+    font-size: 2px;
+    font-family: 'Arial';
+    float: inline-end;
+    text-align: center;
+    width: 100%;
 }
-li{
-display: inline;
-margin-right: 20px;    
+
+ul {}
+
+li {
+    display: inline;
+    margin-right: 20px;    
 }
-li a{
-color: rgb(255, 255, 255);
-text-decoration: none;
-font-size: 25px;
-font-family: 'Arial';
+
+li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Arial';
 }
-li a:hover{
-text-decoration: underline;
+
+li a:hover {
+    text-decoration: underline;
 }
-.active{
-text-decoration: underline;
+
+.active {
+    text-decoration: underline;
 }
-p a{
-color: rgb(255, 255, 255);
+
+p a {
+    color: rgb(255, 255, 255);
 }
-div.info
-{
-color: white;
-background-color: rgb(85, 85, 85);
-border: 5px solid rgb(85, 85, 85);
-width: 85%;  
-text-align: center;
-margin-left: 7.5%;
-height: 50%;
+
+div.info {
+    color: white;
+    background-color: rgb(85, 85, 85);
+    border: 5px solid rgb(85, 85, 85);
+    width: 85%;  
+    text-align: center;
+    margin-left: 7.5%;
+    height: 50%;
 }
-div.products{
+
+div.products {
     color: white;
     background-color: rgb(85, 85, 85);
     border: 5px solid rgb(85, 85, 85);
@@ -92,17 +105,81 @@ div.products{
     font-size: large;
     margin-top: 2.5%;
 }
-img.image{
+
+img.image {
     text-align: justify; 
     margin-top: 13%;
     margin-right: 15%;
     width: 30%;
 }
-div.info2{
+
+div.info2 {
     display: flex;
 }
-html{
+
+html {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;   
+}
+
+/* 🔹 Responzivní úpravy pro mobilní zařízení */
+@media (max-width: 768px) {
+    /* Zmenšení velikosti nadpisů */
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    /* Změna výšky a paddingu pro header */
+    header {
+        height: 200px;
+        padding: 30px 0;
+    }
+
+    /* Změna šířky divu info a produktů */
+    div.info, div.products {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+    }
+
+    /* Úpravy pro obrázky */
+    img.image {
+        width: 60%;
+        margin-right: 0;
+        margin-top: 10%;
+    }
+
+    /* Změna sloupců pro produkty, pro mobilní zařízení pouze 1 sloupec */
+    div.products {
+        grid-template-columns: 1fr;
+        font-size: medium;
+    }
+
+    /* Zajištění správného zobrazení seznamu */
+    li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    li a {
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }

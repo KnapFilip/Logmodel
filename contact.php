@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <link rel="stylesheet" href="css/contact.css">
     <title>Logmodel</title>
     <link rel="icon" type="image/png" href="images/Logo2.png">
@@ -30,7 +30,7 @@
                     <li><a href="about.html">O nás</a></li>
                     <li><a href="catalog.html">Katalog</a></li>
                     <li><a href="eshop.html">Eshop</a></li>
-                    <li class="active"><a href="contact.html">Kontakt</a></li>
+                    <li class="active"><a href="contact.php">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,8 +48,8 @@
                     <input type="text" id="name" name="name" required><br>
                     <label for="email">Email:</label><br>
                     <input type="email" id="email" name="email" required><br>
-                    <label for="subject">Čeho se email týká:</label>
-                    <input type="text" name="subject" id="subject" required>
+                    <label for="subject">Čeho se email týká:</label><br>
+                    <input type="text" name="subject" id="subject" required><br>
                     <label for="message">Zpráva:</label><br>
                     <textarea id="message" name="message" required></textarea><br><br>
                     <input type="submit" value="Odeslat">
@@ -60,8 +60,8 @@
 
 </body>
 <footer>
-    <p>Created by Filip Knap with lot of ☕ and ❤️</p>
-    <p>© 2025 Knap Filip</p>
-</footer>
+    <p>Created by <a href="https://www.knapf.eu">Filip Knap</a> with lot of ☕ and ❤️</p>
+    <p>© 2025 Knap Filip Všechna práva vyhrazena.</p>
+    </footer>
 
 </html>

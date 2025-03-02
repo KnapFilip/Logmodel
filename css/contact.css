@@ -1,161 +1,212 @@
-header{
-    color: rgb(0, 0, 0);
+header {
+    color: black;
     text-align: center;
     font-size: 10px;
-    font-family: 'Arial';
-    background-image: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: fixed;
-    background-position-y: 50%;
+    background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
+    background-size: cover;
+    padding: 50px 0;
+    background-position: center center;
+    height: 300px;
+    width: 99vw;
 }
-body{
+
+body {
     background-color: rgb(85, 85, 85);
     color: black;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
-h1{ 
+
+html{
+    scroll-behavior: smooth;
+    width: 99vw;
+}
+
+h1 {
     color: rgb(255, 255, 255);
     font-size: 50px;
     font-family: 'Arial';
     margin: 15px;
 }
-h2{ 
+
+h2 {
     color: rgb(255, 255, 255);
     font-size: 30px;
     font-family: 'Arial';
     margin: 15px;
 }
-h3{ 
+
+h3 {
     color: rgb(255, 255, 255);
     font-size: 25px;
     font-family: 'Arial';
     margin: 15px;
 }
-p{ 
+
+p {
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-family: 'Arial';
     font-style: italic;
     margin: 15px;
 }
-footer
-{
-color: rgb(255, 255, 255);
-font-size: 2px;
-font-family: 'Arial';
-float: inline-end;
-text-align: center;
-width: 100%;
-}
-nav{
 
+footer {
+    color: rgb(255, 255, 255);
+    font-size: 2px;
+    font-family: 'Arial';
+    float: inline-end;
+    text-align: center;
+    width: 100%;
 }
-ul{
 
-}
-li{
-display: inline;
-margin-right: 20px;    
-}
-li a{
-color: rgb(255, 255, 255);
-text-decoration: none;
-font-size: 25px;
-font-family: 'Arial';
-}
-li a:hover{
-text-decoration: underline;
-}
-.active{
+nav {}
 
-}
-p a{
-color: rgb(255, 255, 255);
-}
-div.info
-{
-color: white;
-background-color: rgb(85, 85, 85);
-border: 5px solid rgb(85, 85, 85);
-width: 85%;  
-text-align: center;
-margin-left: 7.5%;
-height: 100%;
-margin-top: 2.5%;  
-}
-div.contact{
-display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;}
-div.contact_info{
+ul {}
 
+li {
+    display: inline;
+    margin-right: 20px;
 }
-div.form{
 
+li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Arial';
 }
-input{
-background-color: transparent;
-border: 3px solid black;
-font-size: 20px;
-font-family: Arial, Helvetica, sans-serif;
-text-align: center;
-width: 100%;
-color: white;
-}
-textarea{
-background-color: transparent;
-border: 3px solid black;
-font-size: medium;
-font-family: Arial, Helvetica, sans-serif;
-width: 100%;
-color: white;
-text-align: center;
-}
-label{
-font-size: 25px;
-font-family: Arial, Helvetica, sans-serif;
-text-align: center;
-width: 150%;
-}
-input[type=submit]{
-    background-color: transparent;
-    border: 3px solid black;
-    border-radius: 15px;
-    width: 35%;
-    cursor: pointer;
-    color: white;
-}
-html{
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;   
-}
-.active{
+
+li a:hover {
     text-decoration: underline;
 }
 
-/* Mobile-specific styles for iPhone SE 2022 */
+.active{
+    text-decoration: underline;
+    }
+
+p a {
+    color: rgb(255, 255, 255);
+}
+
+div.info {
+    color: white;
+    background-color: rgb(85, 85, 85);
+    border: 5px solid rgb(85, 85, 85);
+    width: 85%;
+    text-align: center;
+    margin-left: 7.5%;
+    height: 100%;
+    margin-top: 2.5%;
+}
+
+div.contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 sloupce */
+    gap: 20px; /* Mezery mezi prvky */
+    align-items: center; /* Vertikální zarovnání */
+    justify-items: center; /* Horizontální zarovnání */
+    width: 100%; /* Nastavuje šířku na 100% */
+}
+
+div.contact_info,
+div.form {
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+input{
+    background-color: transparent;
+    border: 2px solid black;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 50%;
+    color: white;
+    }
+    textarea{
+    background-color: transparent;
+    border: 2px solid black;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    color: white;
+    text-align: center;
+    }
+    label{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 150%;
+    }
+    input[type=submit]{
+        background-color: transparent;
+        border: 3px solid black;
+        border-radius: 15px;
+        width: 35%;
+        cursor: pointer;
+        color: white;
+    }
+
+/* Responzivní úpravy pro mobilní zařízení */
 @media (max-width: 768px) {
+    header {
+        height: 200px;
+        padding: 30px 0;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 10px;
+    }
+
     div.info {
-        width: 95vw;  /* Adjust width for iPhone SE 2022 */
-        margin-left: 2.5%;  /* Center horizontally */
-        margin-right: 2.5%;  /* Center horizontally */
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
     }
+
     div.contact {
-        width: 95vw; /* Adjust width for iPhone SE 2022 */
+        grid-template-columns: 1fr; /* 1 sloupec pro mobilní zařízení */
     }
-    div.contact_info {
-        width: 95vw; /* Adjust width for iPhone SE 2022 */
+
+    li {
+        display: block; /* Změna na blok pro mobilní zařízení */
+        margin-right: 0;
+        margin-bottom: 10px;
     }
-    div.form {
-        width: 95vw; /* Adjust width for iPhone SE 2022 */
+
+    li a {
+        font-size: 20px;
     }
-    input[type=submit] {
-        width: 70%; /* Adjust button size for smaller screens */
+
+    input,
+    textarea {
+        font-size: 16px;
     }
-    label {
-        width: 100%; /* Adjust label width for mobile */
+
+    input[type="submit"] {
+        width: 50%;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }

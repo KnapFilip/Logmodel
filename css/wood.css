@@ -12,8 +12,9 @@ body {
     color: black;
     text-align: center;
     font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
 }
-
 
 header {
     color: black;
@@ -21,74 +22,86 @@ header {
     font-size: 10px;
     background: url(https://ineskunstat.eu/module_files/photogallery/original/673149a17de54f677904d43c4652feee.jpg) no-repeat center;
     background-size: cover;
+    width: 99vw;
+    height: 300px;
+    padding: 50px 0;
 }
-h1{ 
+
+h1 {
     color: rgb(255, 255, 255);
     font-size: 50px;
     font-family: 'Arial';
     margin: 15px;
 }
-h2{ 
+
+h2 {
     color: rgb(255, 255, 255);
     font-size: 30px;
     font-family: 'Arial';
     margin: 15px;
 }
-h3{ 
+
+h3 {
     color: rgb(255, 255, 255);
     font-size: 25px;
     font-family: 'Arial';
     margin: 15px;
 }
-p{ 
+
+p {
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-family: 'Arial';
     font-style: italic;
     margin: 15px;
 }
-footer
-{
-color: rgb(255, 255, 255);
-font-size: 2px;
-font-family: 'Arial';
-float: inline-end;
-text-align: center;
-width: 100%;
-}
-ul{
 
+footer {
+    color: rgb(255, 255, 255);
+    font-size: 2px;
+    font-family: 'Arial';
+    float: inline-end;
+    text-align: center;
+    width: 100%;
 }
-li{
-display: inline;
-margin-right: 20px;    
+
+ul {}
+
+li {
+    display: inline;
+    margin-right: 20px;    
 }
-li a{
-color: rgb(255, 255, 255);
-text-decoration: none;
-font-size: 25px;
-font-family: 'Arial';
+
+li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Arial';
 }
-li a:hover{
-text-decoration: underline;
+
+li a:hover {
+    text-decoration: underline;
 }
-.active{
-text-decoration: underline;
+
+.active {
+    text-decoration: underline;
 }
-p a{
-color: rgb(255, 255, 255);
+
+p a {
+    color: rgb(255, 255, 255);
 }
-div.info
-{
-color: white;
-background-color: rgb(85, 85, 85);
-border: 5px solid rgb(85, 85, 85);
-width: 85%;  
-text-align: center;
-margin-left: 7.5%;
-height: 50%;
+
+div.info {
+    color: white;
+    background-color: rgb(85, 85, 85);
+    border: 5px solid rgb(85, 85, 85);
+    width: 85%;  
+    text-align: center;
+    margin-left: 7.5%;
+    height: 50%;
 }
-div.products{
+
+div.products {
     color: white;
     background-color: rgb(85, 85, 85);
     border: 15px solid rgb(85, 85, 85);
@@ -102,36 +115,114 @@ div.products{
     grid-template-columns: repeat(4, 2fr);
     grid-template-rows: repeat(3, 2fr);
 }
-div.wood{
+
+div.wood {
     border: 2px solid rgb(255, 255, 255);
 }
-h2 a{
+
+h2 a {
     color: white;
     text-decoration: none;
 }
-h2 a:hover{
+
+h2 a:hover {
     color: white;
     text-decoration: underline;
 }
-h3 a{
+
+h3 a {
     color: white;
     text-decoration: none;
 }
-h3 a:hover{
+
+h3 a:hover {
     color: white;
     text-decoration: underline;
 }
-table{
-text-align: center;
-}
-tr{
+
+table {
     text-align: center;
 }
-th{
+
+tr {
     text-align: center;
 }
-html{
+
+th {
+    text-align: center;
+}
+
+html {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;   
+}
+
+/* 🔹 Responzivní úpravy pro mobilní zařízení */
+@media (max-width: 768px) {
+    /* Upravit velikost textu pro nadpisy */
+    h1 {
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 10px;
+    }
+
+    /* Upravit velikost hlavičky */
+    header {
+        height: 200px;
+        padding: 30px 0;
+    }
+
+    /* Změnit sloupce v gridu pro produkty */
+    div.products {
+        grid-template-columns: 1fr; /* 1 sloupec pro mobilní zařízení */
+    }
+
+    /* Zajistit, že info a produkty budou mít 100% šířky */
+    div.info, div.products {
+        width: 100%;
+        margin-left: 0;
+        height: auto;  /* Výška bude automatická pro lepší zobrazení */
+    }
+
+    /* Zajistit správnou velikost tlačítek a vstupních polí */
+    input,
+    textarea {
+        font-size: 16px;
+        width: 80%; /* Upravíme šířku pro mobil */
+        margin: 10px auto;
+    }
+
+    input[type="submit"] {
+        width: 50%;
+    }
+
+    /* Změnit uspořádání seznamu (li) */
+    li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    li a {
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }
