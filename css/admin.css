@@ -1,0 +1,179 @@
+header {
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    background-position: center center;
+    width: 99vw;
+}
+
+body {
+    background-color: rgb(85, 85, 85);
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    width: 99vw;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: 'Arial';
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-family: 'Arial';
+    margin: 15px;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Arial';
+    margin: 15px;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: 'Arial';
+    font-style: italic;
+    margin: 15px;
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    font-size: 2px;
+    font-family: 'Arial';
+    float: inline-end;
+    text-align: center;
+    width: 100%;
+}
+nav {}
+
+ul {}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Arial';
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+.active{
+    text-decoration: underline;
+    }
+
+p a {
+    color: rgb(255, 255, 255);
+}
+table {
+    width: 95%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: center;
+  }
+  table, th, td {
+    border: 1px solid #ddd;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  th {
+    background-color:  rgb(129, 129, 129);
+  }
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 15px;
+  }
+  .btn:hover {
+    background-color: #45a049;
+  }
+/* Styly pro modální okno */
+.modal {
+  display: none; /* Skryté, dokud není aktivováno */
+  position: fixed; /* Fixováno vůči oknu pro zajištění pozice */
+  z-index: 1; /* Zajištění, aby modální okno bylo nad ostatními prvky */
+  left: 0;
+  top: 0;
+  width: 100%; /* Celá šířka okna */
+  height: 100%; /* Celá výška okna */
+  background-color: rgba(0, 0, 0, 0.4); /* Poloprůhledné pozadí */
+}
+
+/* Obsah modálního okna */
+.modal-content {
+  background-color: rgb(129, 129, 129);
+  margin: auto; /* Vertikálně a horizontálně vycentrováno */
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  border: 1px solid #888;
+  width: 80%; /* Nastavuje šířku na 80% obrazovky */
+  max-width: 600px; /* Maximální šířka */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tlačítko pro zavření modálního okna */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  select
+  {
+    color: white;
+    background-color:  rgb(85, 85, 85);
+    font-size: large;
+  }
+  option
+  {
+    font-size: large;
+    color: white;
+    background-color:  rgb(85, 85, 85);
+
+  }

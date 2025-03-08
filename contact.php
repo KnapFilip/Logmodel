@@ -1,4 +1,4 @@
-<?php require("php/email.php"); ?>
+<?php  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="form">
-                <form action="" method="POST">
+                <form action="php/order_to_db.php   " method="POST">
                     <label for="name">Jméno:</label><br>
                     <input type="text" id="name" name="name" required><br>
                     <label for="email">Email:</label><br>

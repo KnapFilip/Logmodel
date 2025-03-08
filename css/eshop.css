@@ -26,7 +26,7 @@ header {
     padding: 50px 0;
     background-position: center center;
     height: 300px;
-    width: 99vw;
+    width: 98vw;
 }
 
 /* 🔹 Nadpisy a odstavce */
@@ -109,7 +109,7 @@ div.bor, div.buk, div.dub, div.javor, div.smrk, div.topol {
 /* 🔹 Optimalizace formulářů */
 div.product_form {
     display: grid;
-    gap: 10px;
+    gap: 50px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     text-align: center;

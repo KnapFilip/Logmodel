@@ -272,6 +272,6 @@ function calculateTotal() {
     const subtotal_dop = parseFloat(document.getElementById("subtotal_dop").value.replace(" Kč", "")) || 0;
 
     const total = subtotalSmrk + subtotalBor + subtotalBuk + subtotalDub + subtotalTopol + subtotalJavor + subtotal_dop;
-    document.getElementById("total").value = total.toFixed(0) + " Kč";
+    document.getElementById("total_price").value = total.toFixed(0) + " Kč";
 }
 
