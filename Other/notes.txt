@@ -10,4 +10,4 @@
 - Objednávkový systém (objednávkový_system.txt) Orders = admin.jpg + propojení s databází ✔
 - Přidat stránku na úpravu ceny (V budoucnu)
 - Upravit všechny stránky na .php a změnit všude navigaci (Možná)
-- Opravit zápis ceny do DB
+- Opravit zápis ceny do DB ✔
