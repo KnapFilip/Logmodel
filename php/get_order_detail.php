@@ -50,6 +50,7 @@ if ($stmt->execute()) {
             'status' => $order['status'],
             'products' => $products, // Produkty jsou nyní asociativní pole
             'total' => $order['total']
+            'shipping_type' => $order['shipping_type']
         ];
 
         header('Content-Type: application/json'); // Nastavení JSON odpovědi

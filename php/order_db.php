@@ -53,6 +53,17 @@ if ($stmt->execute()) {
     echo '<script>alert("Chyba při odesílání objednávky: ' . $stmt->error . '"); window.location.href = "/eshop.html";</script>';
 }
 
+if ($stmt->execute()) {
+    // Získání ID poslední objednávky
+    $order_id = $conn->insert_id;
+
+    // Přesměrování na potvrzení
+    header('Location: ../confirmation.php?order_id=' . $order_id);
+    exit();
+} else {
+    echo "❌ Chyba při odesílání objednávky: " . $stmt->error;
+}
+
 // Uzavření spojení
 $stmt->close();
 $conn->close();

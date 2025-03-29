@@ -29,8 +29,8 @@ if (!isset($_SESSION['user_id'])) {
             <ul>
                 <li><a href="index.html">Úvod</a></li>
                 <li><a href="about.html">O nás</a></li>
-                <li><a href="catalog.html">Katalog</a></li>
-                <li><a href="eshop.html">Eshop</a></li>
+                <li><a href="catalog.php">Katalog</a></li>
+                <li><a href="eshop.php">Eshop</a></li>
                 <li><a href="contact.php">Kontakt</a></li>
                 <li class="active"><a href="admin.php">Dashboard</a></li>
                 <li><a href="php/logout.php">Odhlásit se</a></li>
